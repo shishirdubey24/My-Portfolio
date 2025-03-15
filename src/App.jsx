@@ -1,14 +1,14 @@
 import './App.css'
+import Header from './Components/Header'
 
 function App() {
 
   return (
    <>
-      <p className="">Your setup is correct! 🚀</p>
-      <h1 className="bg-blue-500">ajdnguifhng</h1>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+   <div >
+   <Header/>
+   </div>
+    
    </>
   )
 }
