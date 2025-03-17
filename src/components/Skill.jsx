@@ -9,7 +9,12 @@ const Skill = () => {
     "hover: shadow-md";
 
   return (
-    <div id="skill" className="font-medium flex space-x-10 flex-wrap justify-center p-6 bg-gray-50 rounded-lg shadow-md">
+       
+      
+      <div id="project" className="font-medium p-6 mt-70"> 
+      <h1 className="text-2xl font-bold text-center mb-6">My Skills</h1>
+   
+    <div id="skill" className=" mt-40   font-medium flex space-x-10 flex-wrap justify-center p-6 bg-gray-50 rounded-lg shadow-md">
       
       {/* Programming Languages */}
       <div className="p-4 rounded-lg shadow-md w-64">
@@ -75,6 +80,8 @@ const Skill = () => {
       </div>
 
     </div>
+  
+   </div>
   );
 };
 
