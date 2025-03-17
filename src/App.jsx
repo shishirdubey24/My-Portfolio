@@ -1,23 +1,23 @@
 import './App.css'
-import About from './Components/About'
-import Certifications from './Components/Certifications'
-import ContactDetails from './Components/Contact'
-import Education from './Components/Education'
-import Header from './Components/Header'
-import Projects from './Components/Projects'
-import Skill from './Components/Skill'
+import About from './components/About'
+import Certifications from './components/Certifications'
+
+import ContactDetails from './components/Contact'
+import Education from './components/Education'
+import Header from './components/Header'
+import Projects from './components/Projects'
+import Skill from './components/Skill'
 
 function App() {
-
   return (
    <>
    <div >
    <Header/>
-   <About/>
+    <About/>
    <Skill/>
    <Projects/>
     <Education/>
-    <Certifications/>
+     <Certifications/>
      <ContactDetails/>
    </div>
     
