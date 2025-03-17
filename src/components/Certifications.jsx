@@ -19,7 +19,7 @@ const Certifications = () => {
           {/* 🖼️ Certificate Image Placeholder */}
           <div className="mt-4">
             <img 
-              src="/public/WhatsApp Image 2025-03-16 at 22.10.06_19cc2805.jpg" 
+              src="./js.jpg"
               alt="JavaScript Certification" 
               className="w-50% h-80 rounded-lg shadow"
             />
@@ -36,7 +36,7 @@ const Certifications = () => {
           {/* 🖼️ Certificate Image Placeholder */}
           <div className="mt-4">
             <img 
-              src="/public/Hack_Img.jpg" 
+              src="/Hack_Img.jpg" 
               alt="JavaScript Certification" 
               className="w-50% h-80 rounded-lg shadow"
             />
