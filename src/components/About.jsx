@@ -29,11 +29,13 @@ const About = () => {
         Shishir Dubey
       </h2>
       <h3 className="text-xl sm:text-2xl font-semibold text-gray-500 mt-2 p-2 sm:p-3 text-center sm:text-left">
-        Front-end Developer
+        Full Stack Developer
       </h3>
       <p className="text-md sm:text-lg text-gray-700 mt-2 max-w-lg text-center sm:text-left mx-auto sm:mx-0">
-        I build responsive, user-friendly web applications with modern technologies.  
-        Passionate about creating clean, efficient code and seamless user experiences.
+        I build scalable, responsive web applications with React.js, Node.js, and MongoDB.  
+        Skilled in state management using Redux and Context API, REST API integration, and  
+        real-time features using WebSockets. Passionate about clean, maintainable code and  
+        seamless user experiences across both frontend and backend.
       </p>
 
       {/* Buttons Container */}
