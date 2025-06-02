@@ -28,7 +28,7 @@ const Projects = () => {
 
                 {/*  Live Link*/}
 
-            <a href="https://legendary-valkyrie-68223b.netlify.app/" className="flex items-center gap-2 px-4 py-2 border rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition">
+            <a href="https://trendwired.netlify.app//" className="flex items-center gap-2 px-4 py-2 border rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition">
               <FaExternalLinkAlt /> Live Demo
             </a>
             <a href="https://github.com/shishirdubey24/E-commerce-project.git" className="flex items-center gap-2 px-4 py-2 border rounded-lg text-white bg-gray-800 hover:bg-black transition">
