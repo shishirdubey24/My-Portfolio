@@ -76,7 +76,7 @@ const About = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in delay-2000">
               <a
-                href="https://www.linkedin.com/in/shishir-dubey-9484a9333"
+                href="https://www.linkedin.com/in/shishirdubey-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-gray-900 rounded-lg font-semibold transition-all duration-200 shadow-md hover-lift"
