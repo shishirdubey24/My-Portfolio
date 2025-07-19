@@ -49,7 +49,7 @@ const About = () => {
             
             {/* Content with CSS animation */}
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-xl animate-fade-in delay-1000">
-              Skilled in React.js, Node.js, MongoDB, and REST APIs. I build full-cycle web applications 
+              Skilled in React.js,Next.js, Node.js, MongoDB, and REST APIs. I build full-cycle web applications 
               with secure authentication, responsive design, and optimized performance. Adept at turning 
               ideas into production-ready applications with clean, maintainable code.
             </p>
