@@ -1,64 +1,140 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa"; // Importing icons
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiCode, HiSparkles } from "react-icons/hi";
+import { Typewriter } from 'react-simple-typewriter';
 
 const About = () => {
   return (
-    <div
-      id="home"
-      className="relative mx-auto w-[90%] sm:w-[80%] md:w-[60%] max-w-2xl p-10 sm:p-16 md:p-20 mt-20 sm:mt-32"
-    >
-      {/* Image inside tilted box - positioned slightly lower */}
-      <div className="absolute top-[-80px] sm:top-[-120px] left-1/2 -translate-x-1/2 w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gray-300 rounded-lg rotate-[-6deg] flex items-center justify-center shadow-lg">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 sm:w-16 sm:h-16 text-gray-600"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M16 18l6-6-6-6M8 6L2 12l6 6" />
-        </svg>
-      </div>
+    <div id="home" className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
+          <div className="order-2 lg:order-1 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-6 animate-fade-in-down delay-300">
+              <HiSparkles className="text-lg" />
+              Full Stack Developer
+            </div>
+            
+            <h1 className="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-2 animate-fade-in delay-200">
+              Hello, I'm
+            </h1>
+            
+            {/* Animated Name using react-simple-typewriter */}
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 min-h-[4rem] md:min-h-[6rem] animate-slide-in-left delay-100">
+              <Typewriter
+                words={['Shishir Dubey']}
+                loop={1}
+                cursor
+                cursorStyle='|'
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={1000}
+                cursorColor='rgb(107 114 128)'
+              />
+            </h2>
+            
+            {/* Animated Title with delay */}
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 mb-6 min-h-[2rem] md:min-h-[3rem] animate-slide-in-left delay-200">
+              <Typewriter
+                words={['Freelance Full Stack Developer']}
+                loop={1}
+                cursor
+                cursorStyle='|'
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={2500}
+                cursorColor='rgb(107 114 128)'
+              />
+            </h3>
+            
+            {/* Content with CSS animation */}
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-xl animate-fade-in delay-1000">
+              Skilled in React.js, Node.js, MongoDB, and REST APIs. I build full-cycle web applications 
+              with secure authentication, responsive design, and optimized performance. Adept at turning 
+              ideas into production-ready applications with clean, maintainable code.
+            </p>
 
-      <h1 className="text-lg sm:text-xl font-bold text-gray-400 mb-2 text-center sm:text-left">
-        Hello, I’m
-      </h1>
-      <h2 className="text-3xl sm:text-5xl font-bold text-black mt-1 animate-pop text-center sm:text-left">
-        Shishir Dubey
-      </h2>
-      <h3 className="text-xl sm:text-2xl font-semibold text-gray-500 mt-2 p-2 sm:p-3 text-center sm:text-left">
-        Full Stack Developer
-      </h3>
-      <p className="text-md sm:text-lg text-gray-700 mt-2 max-w-lg text-center sm:text-left mx-auto sm:mx-0">
-        I build scalable, responsive web applications with React.js, Node.js, and MongoDB.  
-        Skilled in state management using Redux and Context API, REST API integration, and  
-        real-time features using WebSockets. Passionate about clean, maintainable code and  
-        seamless user experiences across both frontend and backend.
-      </p>
+            {/* Professional Highlights */}
+            <div className="mb-8 animate-fade-in delay-1200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Responsive full-stack web apps",
+                  "Scalable frontend with Tailwind CSS", 
+                  "REST APIs & secure authentication",
+                  "Modular architecture & Git workflow"
+                ].map((text, index) => (
+                  <div 
+                    key={index}
+                    className={`flex items-start gap-3 animate-slide-in-left delay-${1500 + (index * 100)}`}
+                  >
+                    <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"></div>
+                    <span className="text-gray-700 dark:text-gray-300">{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in delay-2000">
+              <a
+                href="https://www.linkedin.com/in/shishir-dubey-9484a9333"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-gray-900 rounded-lg font-semibold transition-all duration-200 shadow-md hover-lift"
+              >
+                <FaLinkedin className="text-lg" />
+                LinkedIn
+              </a>
+              
+              <a
+                href="https://github.com/shishirdubey24"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 rounded-lg font-semibold transition-all duration-200 hover-lift"
+              >
+                <FaGithub className="text-lg" />
+                GitHub
+              </a>
+            </div>
+          </div>
 
-      {/* Buttons Container */}
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-4 sm:gap-6 mt-6">
-        {/* LinkedIn Button */}
-        <a
-          href="https://www.linkedin.com/in/shishir-dubey-9484a9333"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold rounded-lg shadow-md transition-transform duration-300 hover:scale-105 w-[80%] sm:w-auto text-center justify-center"
-        >
-          <FaLinkedin className="text-xl" /> LinkedIn
-        </a>
-
-        {/* GitHub Button */}
-        <a
-          href="https://github.com/shishirdubey24"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-600 text-white font-semibold rounded-lg shadow-md transition-transform duration-300 hover:scale-105 w-[80%] sm:w-auto text-center justify-center"
-        >
-          <FaGithub className="text-xl" /> GitHub
-        </a>
+          {/* Right Content - Profile Card */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in-rotate delay-500">
+            <div className="relative">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-2xl transform rotate-3 scale-105 animate-float"></div>
+              
+              {/* Main card */}
+              <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-xl transform hover:rotate-1 transition-transform duration-300 hover-scale">
+                <div className="text-center">
+                  {/* Profile icon/avatar area */}
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gray-100 dark:bg-gray-700 rounded-2xl flex items-center justify-center animate-pulse-once delay-800">
+                    <HiCode className="w-16 h-16 text-gray-600 dark:text-gray-400" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 animate-fade-in delay-600">
+                    Full Stack Developer
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 animate-fade-in delay-700">
+                    Remote, India
+                  </p>
+                  
+                  {/* Tech stack highlights */}
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {['React.js', 'Node.js', 'MongoDB', 'Firebase'].map((tech, index) => (
+                      <span 
+                        key={tech}
+                        className={`px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium animate-bounce-in delay-${1000 + (index * 100)}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
