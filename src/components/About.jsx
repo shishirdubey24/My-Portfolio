@@ -49,9 +49,8 @@ const About = () => {
             
             {/* Content with CSS animation */}
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-xl animate-fade-in delay-1000">
-              Skilled in React.js,Next.js, Node.js, MongoDB, and REST APIs. I build full-cycle web applications 
-              with secure authentication, responsive design, and optimized performance. Adept at turning 
-              ideas into production-ready applications with clean, maintainable code.
+               I don’t just ship features — I ship thoughtful solutions. From building end-to-end web, handling secure authentication to performance and SEO. I focus on writing maintainable code that actually solves real problems.
+               
             </p>
 
             {/* Professional Highlights */}
@@ -59,8 +58,8 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   "Responsive full-stack web apps",
-                  "Scalable frontend with Tailwind CSS", 
-                  "REST APIs & secure authentication",
+                "Scalable Infra with system flow maps",
+                  "JWT auth,  REST API integration",
                   "Modular architecture & Git workflow"
                 ].map((text, index) => (
                   <div 
