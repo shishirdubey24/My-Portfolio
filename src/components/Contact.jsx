@@ -21,7 +21,7 @@ const ContactDetails = () => {
   };
 
   return (
-    <div id="contact" className="font-medium p-6 mt-20 bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="contact" className="font-medium p-6 mt-20  min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
