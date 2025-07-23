@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const About = () => {
   return (
-   <div id="home" className="min-h-screen flex items-center">
+    <div id="home" className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
@@ -19,7 +19,6 @@ const About = () => {
               Hello, I'm
             </h1>
             
-            {/* Animated Name using react-simple-typewriter */}
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 min-h-[4rem] md:min-h-[6rem] animate-slide-in-left delay-100">
               <Typewriter
                 words={['Shishir Dubey']}
@@ -33,7 +32,6 @@ const About = () => {
               />
             </h2>
             
-            {/* Animated Title with delay */}
             <h3 className="text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 mb-6 min-h-[2rem] md:min-h-[3rem] animate-slide-in-left delay-200">
               <Typewriter
                 words={['Freelance Full Stack Developer']}
@@ -47,10 +45,8 @@ const About = () => {
               />
             </h3>
             
-            {/* Content with CSS animation */}
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-xl animate-fade-in delay-1000">
-               I don’t just ship features — I ship thoughtful solutions. From building end-to-end web, handling secure authentication to performance and SEO. I focus on writing maintainable code that actually solves real problems.
-               
+               I don't just ship features — I ship thoughtful solutions. From building end-to-end web, handling secure authentication to performance and SEO. I focus on writing maintainable code that actually solves real problems.
             </p>
 
             {/* Professional Highlights */}
@@ -58,8 +54,8 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   "Responsive full-stack web apps",
-                "Scalable Infra with system flow maps",
-                  "JWT auth,  REST API integration",
+                  "Scalable Infra with system flow maps",
+                  "JWT auth, REST API integration",
                   "Modular architecture & Git workflow"
                 ].map((text, index) => (
                   <div 
@@ -104,8 +100,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-2xl transform rotate-3 scale-105 animate-float"></div>
               
               {/* Main card */}
-             <div className="relative bg-white dark:bg-[#192a45] border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-xl">
-
+              <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-xl transform hover:rotate-1 transition-transform duration-300 hover-scale">
                 <div className="text-center">
                   {/* Profile icon/avatar area */}
                   <div className="w-32 h-32 mx-auto mb-6 bg-gray-100 dark:bg-gray-700 rounded-2xl flex items-center justify-center animate-pulse-once delay-800">
