@@ -104,7 +104,8 @@ const About = () => {
               <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-2xl transform rotate-3 scale-105 animate-float"></div>
               
               {/* Main card */}
-              <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-xl transform hover:rotate-1 transition-transform duration-300 hover-scale">
+             <div className="relative bg-white dark:bg-[#1c2d47] border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-xl">
+
                 <div className="text-center">
                   {/* Profile icon/avatar area */}
                   <div className="w-32 h-32 mx-auto mb-6 bg-gray-100 dark:bg-gray-700 rounded-2xl flex items-center justify-center animate-pulse-once delay-800">
