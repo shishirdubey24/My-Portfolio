@@ -1,29 +1,33 @@
 /* =============================================================================
-   GLOBAL BASE STYLES – FORCED DARK MODE BACKGROUND
+   FOUC PREVENTION & INSTANT BACKGROUND
+   Prevents white flash on page load - matches App.jsx colors
    ============================================================================= */
 
+/* Immediate background - no flash */
 html, body {
-  background-color: #111827; /* Always dark */
+  color-scheme: light dark; /* gray-50 - matches your App.jsx */
   margin: 0;
   padding: 0;
-  color: #f9fafb;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Smooth transitions for theme changes */
+html, body {
   transition: background-color 0.15s ease;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 /* =============================================================================
-   SMOOTH SCROLLING - UNIVERSAL
-   ============================================================================= */
-* {
-  scroll-behavior: smooth;
-}
-
-/* =============================================================================
-   ANIMATIONS – CLEAN, HARDWARE ACCELERATED
+   LIGHTWEIGHT ANIMATIONS FOR PORTFOLIO COMPONENTS
+   Optimized for React Performance & Clean Card Designs
    ============================================================================= */
 
-/* Keyframes */
+/* Base Keyframe Animations */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -75,7 +79,7 @@ html, body {
   50% { transform: translateY(-10px); }
 }
 
-/* Animation Classes */
+/* Animation Classes - Hardware Accelerated */
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
   opacity: 0;
@@ -132,7 +136,7 @@ html, body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Delays */
+/* Delay Classes for Staggered Animations */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
@@ -146,7 +150,7 @@ html, body {
 .delay-1500 { animation-delay: 1500ms; }
 .delay-2000 { animation-delay: 2000ms; }
 
-/* Performance Boost */
+/* Performance Optimizations */
 .animate-fade-in,
 .animate-fade-in-up,
 .animate-fade-in-down,
@@ -159,13 +163,11 @@ html, body {
   perspective: 1000px;
 }
 
-/* =============================================================================
-   HOVER INTERACTIONS
-   ============================================================================= */
-
+/* Hover Effects for Interactive Elements */
 .hover-lift {
   transition: transform 0.2s ease-out;
 }
+
 .hover-lift:hover {
   transform: translateY(-2px);
 }
@@ -173,28 +175,46 @@ html, body {
 .hover-scale {
   transition: transform 0.2s ease-out;
 }
+
 .hover-scale:hover {
   transform: scale(1.02);
 }
 
-/* =============================================================================
-   CARD & COMPONENT DESIGN
-   ============================================================================= */
-
-.card-container {
-  background: linear-gradient(145deg, #1f2937, #111827); /* always dark */
-  border: 1px solid #374151;
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-/* Optional: Loaded state styling */
+/* Ultra-smooth scrolling for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* =============================================================================
+   COMPONENT LOADING OPTIMIZATION
+   Ensures smooth entrance for all portfolio sections
+   ============================================================================= */
+
+/* Initial state - prevents layout shift */
 .portfolio-loaded {
-  /* Add loaded animations or classes here if needed */
+  /* Add any global loaded state styles if needed */
 }
 
-/* =============================================================================
-   ACCESSIBILITY – REDUCED MOTION SUPPORT
-   ============================================================================= */
+/* Optimize for your card designs */
+.card-container {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  border: 1px solid #e5e7eb;
+}
 
+@media (prefers-color-scheme: dark) {
+  .card-container {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    border: 1px solid #374151;
+  }
+}
+
+/* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
   .animate-fade-in-up,
@@ -209,7 +229,7 @@ html, body {
     opacity: 1;
     transform: none;
   }
-
+  
   html, * {
     scroll-behavior: auto;
   }
@@ -217,21 +237,23 @@ html, body {
 
 /* =============================================================================
    MOBILE OPTIMIZATION
+   Ensures consistent experience across all devices
    ============================================================================= */
 
-/* Prevent mobile zoom on input */
+/* Prevent mobile browser zoom on input focus */
 @viewport {
   width: device-width;
   zoom: 1.0;
 }
 
-/* Mobile performance tweaks */
+/* Mobile-specific optimizations */
 @media (max-width: 768px) {
   html, body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
-
+  
+  /* Optimize animations for mobile performance */
   .animate-fade-in,
   .animate-fade-in-up,
   .animate-fade-in-down,
@@ -240,6 +262,6 @@ html, body {
   .animate-scale-in,
   .animate-scale-in-rotate,
   .animate-bounce-in {
-    animation-duration: 0.6s;
+    animation-duration: 0.6s; /* Faster on mobile */
   }
 }
