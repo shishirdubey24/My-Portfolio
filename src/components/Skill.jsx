@@ -37,7 +37,7 @@ const Skill = () => {
     <div 
       id="skill" 
       ref={skillsRef}
-      className="font-medium p-6 mt-20 bg-gray-50 dark:bg-gray-900 min-h-screen"
+      className="font-medium p-6 mt-20  min-h-screen"
     >
       {/* Header Section */}
       <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
