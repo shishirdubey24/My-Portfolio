@@ -10,7 +10,7 @@ import Projects from './components/Projects'
 function App() {
   return (
    <>
-   <div className="min-h-screen bg-[#0e1628]"> 
+   <div className="min-h-screen bg-[#111827]"> 
    <Header/>
     <About/>
    <Skill/>
