@@ -1,25 +1,117 @@
 /* =============================================================================
-   FOUC PREVENTION & INSTANT BACKGROUND
-   Prevents white flash on page load - matches App.jsx colors
+   DEVICE-INDEPENDENT COLOR SYSTEM
+   Works consistently across all devices without relying on system preferences
    ============================================================================= */
 
-/* Immediate background - no flash */
+/* Root color variables - always consistent */
+:root {
+  --bg-primary: #f8fafc;        /* Very light gray */
+  --bg-secondary: #ffffff;      /* Pure white */
+  --bg-card: #ffffff;           /* Card background */
+  --text-primary: #1e293b;      /* Dark slate */
+  --text-secondary: #475569;    /* Medium slate */
+  --text-muted: #64748b;        /* Light slate */
+  --border-color: #e2e8f0;      /* Light border */
+  --accent-color: #3b82f6;      /* Blue accent */
+}
+
+/* Dark theme colors - applied via class, not media query */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;        /* Very dark slate */
+  --bg-secondary: #1e293b;      /* Dark slate */
+  --bg-card: #334155;           /* Medium dark slate */
+  --text-primary: #f1f5f9;      /* Very light slate */
+  --text-secondary: #cbd5e1;    /* Light slate */
+  --text-muted: #94a3b8;        /* Medium light slate */
+  --border-color: #475569;      /* Dark border */
+  --accent-color: #60a5fa;      /* Light blue accent */
+}
+
+/* Apply colors using variables */
 html, body {
-  color-scheme: light dark; /* gray-50 - matches your App.jsx */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+/* Override any system preferences */
+* {
+  color-scheme: normal;
 }
 
-/* Smooth transitions for theme changes */
-html, body {
-  transition: background-color 0.15s ease;
+/* =============================================================================
+   CONSISTENT UTILITY CLASSES
+   Replace Tailwind dark mode classes with these
+   ============================================================================= */
+
+/* Background classes */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-card { background-color: var(--bg-card); }
+
+/* Text classes */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+/* Border classes */
+.border-default { border-color: var(--border-color); }
+
+/* Card styling */
+.portfolio-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border: 2px solid var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background-color: var(--bg-card);
 }
 
 /* =============================================================================
@@ -201,19 +293,6 @@ html {
   /* Add any global loaded state styles if needed */
 }
 
-/* Optimize for your card designs */
-.card-container {
-  background: linear-gradient(145deg, #ffffff, #f3f4f6);
-  border: 1px solid #e5e7eb;
-}
-
-@media (prefers-color-scheme: dark) {
-  .card-container {
-    background: linear-gradient(145deg, #1f2937, #111827);
-    border: 1px solid #374151;
-  }
-}
-
 /* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
@@ -263,5 +342,63 @@ html {
   .animate-scale-in-rotate,
   .animate-bounce-in {
     animation-duration: 0.6s; /* Faster on mobile */
+  }
+
+  /* Ensure buttons work well on mobile */
+  .btn-primary,
+  .btn-secondary {
+    min-height: 44px; /* iOS touch target minimum */
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* =============================================================================
+   RESPONSIVE GRID UTILITIES
+   For consistent layout across all components
+   ============================================================================= */
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
