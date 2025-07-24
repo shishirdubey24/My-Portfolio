@@ -29,7 +29,7 @@ const NavBar = () => {
             className="font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 relative group cursor-pointer py-2"
           >
             {item.name}
-            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-900 dark:bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className="absolute left-0 bottom-0 w-full h-[2px]  dark:bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
         ))}
       </nav>

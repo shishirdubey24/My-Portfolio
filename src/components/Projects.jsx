@@ -3,41 +3,41 @@ import { HiSparkles, HiCode, HiShoppingBag } from "react-icons/hi";
 
 const Projects = () => {
   return (
-    <div id="project" className="font-medium p-6 mt-20  min-h-screen">
+    <div id="project" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-full text-gray-300 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Portfolio Showcase
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           My Projects
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-300 max-w-2xl mx-auto text-lg">
           Discover my latest work featuring modern web technologies and innovative solutions
         </p>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 max-w-7xl mx-auto">
         
-        {/*  Project 1: Code Editor */}
-        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {/* Project 1: Code Editor */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <div className="relative p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <HiCode className="text-xl text-gray-600 dark:text-gray-400" />
+              <div className="p-2 rounded-lg">
+                <HiCode className="text-xl text-gray-300" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Code Snippet Editor</h2>
+              <h2 className="text-2xl font-bold text-white">Code Snippet Editor</h2>
             </div>
             
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               A fully functional in-browser code snippet editor that supports multiple languages with real-time syntax highlighting powered by Monaco Editor.
               Includes features like autosave, local snippet storage, dynamic routing, and sharing capabilities.
             </p>
             
             <div className="flex flex-wrap gap-2 mb-6">
               {['Next.js', 'React.js', 'Tailwind CSS', 'LocalStorage', 'Monaco Editor'].map((tech) => (
-                <span key={tech} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
+                <span key={tech} className="px-3 py-1.5 text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
                   {tech}
                 </span>
               ))}
@@ -53,7 +53,7 @@ const Projects = () => {
               </a>
               <a 
                 href="https://github.com/shishirdubey24/Code-Editor.git" 
-                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 rounded-lg font-semibold transition-all duration-200"
+                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-300 rounded-lg font-semibold transition-all duration-200"
               >
                 <FaGithub className="text-sm" /> 
                 GitHub
@@ -62,11 +62,11 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ✅ Features for Code Editor */}
-        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        {/* Features for Code Editor */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="relative p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <HiSparkles className="text-gray-500 dark:text-gray-400" />
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <HiSparkles className="text-gray-400" />
               Key Features
             </h3>
             <ul className="space-y-4">
@@ -77,7 +77,7 @@ const Projects = () => {
                 { icon: '🔄', text: 'Auto-save logic saves in-progress code by language key' },
                 { icon: '📤', text: 'Easily share snippet links using clean routes' }
               ].map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                <li key={index} className="flex items-start gap-3 text-gray-300">
                   <span className="text-lg">{feature.icon}</span>
                   <span className="leading-relaxed">{feature.text}</span>
                 </li>
@@ -86,17 +86,17 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* 🚀 Project 2: Full Stack E-Commerce */}
-        <div className="group relative overflow-hidden rounded-xl dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {/* Project 2: Full Stack E-Commerce */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <div className="relative p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <HiShoppingBag className="text-xl text-gray-600 dark:text-gray-400" />
+              <div className="p-2 rounded-lg">
+                <HiShoppingBag className="text-xl text-gray-300" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Full Stack E-Commerce</h2>
+              <h2 className="text-2xl font-bold text-white">Full Stack E-Commerce</h2>
             </div>
             
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               Developed a responsive e-commerce web application replicating Myntra's core functionalities.
               Implemented secure authentication with Appwrite, optimized state management using Redux, 
               and created a dynamic UI with React.js.
@@ -104,7 +104,7 @@ const Projects = () => {
             
             <div className="flex flex-wrap gap-2 mb-6">
               {['React.js', 'Redux', 'Router', 'JavaScript', 'Bootstrap', 'Appwrite'].map((tech) => (
-                <span key={tech} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
+                <span key={tech} className="px-3 py-1.5 text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
                   {tech}
                 </span>
               ))}
@@ -120,7 +120,7 @@ const Projects = () => {
               </a>
               <a 
                 href="https://github.com/shishirdubey24/E-commerce-project.git" 
-                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 rounded-lg font-semibold transition-all duration-200"
+                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-300 rounded-lg font-semibold transition-all duration-200"
               >
                 <FaGithub className="text-sm" /> 
                 GitHub
@@ -129,11 +129,11 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ✅ Features for E-Commerce */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        {/* Features for E-Commerce */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="relative p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <HiSparkles className="text-gray-500 dark:text-gray-400" />
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <HiSparkles className="text-gray-400" />
               Key Features
             </h3>
             <ul className="space-y-4">
@@ -144,7 +144,7 @@ const Projects = () => {
                 { icon: '🛒', text: 'Developed an interactive shopping cart with persistence' },
                 { icon: '📱', text: 'Ensured fully responsive design using Bootstrap + Flexbox' }
               ].map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                <li key={index} className="flex items-start gap-3 text-gray-300">
                   <span className="text-lg">{feature.icon}</span>
                   <span className="leading-relaxed">{feature.text}</span>
                 </li>
@@ -153,24 +153,24 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* 🚀 Project 3: Shopify Custom Storefront */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {/* Project 3: Shopify Custom Storefront */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <div className="relative p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <HiShoppingBag className="text-xl text-gray-600 dark:text-gray-400" />
+              <div className="p-2 rounded-lg">
+                <HiShoppingBag className="text-xl text-gray-300" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Shopify Custom Storefront</h2>
+              <h2 className="text-2xl font-bold text-white">Shopify Custom Storefront</h2>
             </div>
             
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               Developed a custom Shopify storefront using Storefront API and GraphQL.
               Integrated Auth0 for authentication and Stripe for payment, enabling seamless e-commerce experience.
             </p>
             
             <div className="flex flex-wrap gap-2 mb-6">
               {['Next.js', 'GraphQL', 'Shopify API', 'Tailwind CSS', 'Auth0', 'Stripe'].map((tech) => (
-                <span key={tech} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
+                <span key={tech} className="px-3 py-1.5 text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
                   {tech}
                 </span>
               ))}
@@ -186,7 +186,7 @@ const Projects = () => {
               </a>
               <a 
                 href="https://github.com/shishirdubey24/Shopify-Clone.git" 
-                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 rounded-lg font-semibold transition-all duration-200"
+                className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-300 rounded-lg font-semibold transition-all duration-200"
               >
                 <FaGithub className="text-sm" /> 
                 GitHub
@@ -195,11 +195,11 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ✅ Features for Shopify */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        {/* Features for Shopify */}
+        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="relative p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <HiSparkles className="text-gray-500 dark:text-gray-400" />
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <HiSparkles className="text-gray-400" />
               Key Features
             </h3>
             <ul className="space-y-4">
@@ -210,7 +210,7 @@ const Projects = () => {
                 { icon: '🔑', text: 'Enabled Auth0-based authentication' },
                 { icon: '📦', text: 'Developed an order tracking system synced with Shopify backend' }
               ].map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                <li key={index} className="flex items-start gap-3 text-gray-300">
                   <span className="text-lg">{feature.icon}</span>
                   <span className="leading-relaxed">{feature.text}</span>
                 </li>

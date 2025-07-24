@@ -126,7 +126,7 @@ const Skill = () => {
               "HTML",
               "CSS"
             ]}
-            delay={400}
+            delay={100}
           />
           <Section
             icon={FaReact}
@@ -140,19 +140,19 @@ const Skill = () => {
               "Tailwind CSS",
               "Shadcn/UI"
             ]}
-            delay={500}
+            delay={100}
           />
           <Section
             icon={SiNextdotjs}
             title="Backend & Runtime"
             items={["Node.js", "Express.js", "Next.js API", "REST APIs"]}
-            delay={600}
+            delay={100}
           />
           <Section
             icon={FaDatabase}
             title="Database"
             items={["MySQL", "MongoDB", "Firebase", "Appwrite"]}
-            delay={700}
+            delay={100}
           />
           <Section
             icon={FaToolbox}
@@ -167,7 +167,7 @@ const Skill = () => {
               "Vercel",
               "Netlify"
             ]}
-            delay={800}
+            delay={100}
           />
           <Section
             icon={HiSparkles}
@@ -182,7 +182,7 @@ const Skill = () => {
               "Responsive Design",
               "SEO"
             ]}
-            delay={900}
+            delay={100}
           />
         </div>
       </div>
