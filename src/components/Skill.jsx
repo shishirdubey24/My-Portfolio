@@ -31,7 +31,7 @@ const Skill = () => {
 
   const Section = ({ icon: Icon, title, items, delay = 400 }) => (
     <div
-      className={`group relative overflow-hidden rounded-xl dark:bg-gray-800 bg-gray-100 border border-gray-300 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift ${
+      className={`group relative overflow-hidden rounded-xl bg-gray-700/50 backdrop-blur-sm border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift ${
         isVisible ? `animate-scale-in delay-${delay}` : "opacity-0"
       }`}
     >
@@ -42,13 +42,13 @@ const Skill = () => {
           }`}
         >
           <div
-            className={`p-2 bg-gray-200 dark:bg-gray-700 rounded-lg ${
+            className={`p-2 bg-gray-600 rounded-lg ${
               isVisible ? `animate-pulse-once delay-${delay + 400}` : ""
             }`}
           >
-            {Icon && <Icon className="text-xl text-gray-700 dark:text-gray-400" />}
+            {Icon && <Icon className="text-xl text-gray-300" />}
           </div>
-          <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+          <h2 className="text-xl font-bold text-white">
             {title}
           </h2>
         </div>
@@ -56,7 +56,7 @@ const Skill = () => {
           {items.map((skill, index) => (
             <span
               key={skill}
-              className={`px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-colors text-center hover-scale ${
+              className={`px-3 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm font-medium border border-gray-700 hover:border-gray-500 transition-colors text-center hover-scale ${
                 isVisible ? "animate-bounce-in" : "opacity-0"
               }`}
               style={{
@@ -77,7 +77,8 @@ const Skill = () => {
     <section
       id="skill"
       ref={skillsRef}
-      className="min-h-screen w-full bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white py-20 px-6"
+      className="min-h-screen w-full text-white py-20 px-6"
+      style={{background: 'transparent'}}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -87,7 +88,7 @@ const Skill = () => {
           }`}
         >
           <div
-            className={`inline-flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4 ${
+            className={`inline-flex items-center gap-2 px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4 ${
               isVisible ? "animate-fade-in-down delay-300" : "opacity-0"
             }`}
           >

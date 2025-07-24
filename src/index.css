@@ -1,17 +1,12 @@
-
-
 /* =============================================================================
-   CLEAN GRAY BACKGROUND SYSTEM - Global
+   CLEAN GRAY BACKGROUND SYSTEM - Global (Refined)
    ============================================================================= */
 
-html {
-  background-color: #f1f5f9;
+html, body {
+  background-color: #151a1e;
   color: #1e293b;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-}
-
-body {
   margin: 0;
   padding: 0;
 }
@@ -21,8 +16,12 @@ body {
   min-height: 100vh;
 }
 
-/* Remove unnecessary forced background-color utilities */
+/* Allow gradient backgrounds to work properly */
+#root > div {
+  background: inherit;
+}
 
+/* Remove unnecessary forced background-color utilities */
 * {
   color-scheme: normal;
   scroll-behavior: smooth;
