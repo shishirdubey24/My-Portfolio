@@ -24,7 +24,7 @@ const ContactDetails = () => {
     <div id="contact" className="font-medium p-6 mt-20  min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Get In Touch
         </div>
@@ -40,7 +40,7 @@ const ContactDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Contact Information Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative p-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
@@ -51,7 +51,7 @@ const ContactDetails = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                  <div className="p-2 bg-white dark:bg-gray-600 rounded-lg">
+                  <div className="p-2  dark:bg-gray-600 rounded-lg">
                     <FaEnvelope className="text-lg text-gray-600 dark:text-gray-400" />
                   </div>
                   <div>
@@ -66,7 +66,7 @@ const ContactDetails = () => {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                  <div className="p-2 bg-white dark:bg-gray-600 rounded-lg">
+                  <div className="p-2  dark:bg-gray-600 rounded-lg">
                     <FaPhone className="text-lg text-gray-600 dark:text-gray-400" />
                   </div>
                   <div>
@@ -76,7 +76,7 @@ const ContactDetails = () => {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                  <div className="p-2 bg-white dark:bg-gray-600 rounded-lg">
+                  <div className="p-2  dark:bg-gray-600 rounded-lg">
                     <FaMapMarkerAlt className="text-lg text-gray-600 dark:text-gray-400" />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ const ContactDetails = () => {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {['Freelance Projects', 'Full-time Roles', 'Collaborations', 'Consulting'].map((item) => (
-                    <span key={item} className="px-3 py-1 bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium">
+                    <span key={item} className="px-3 py-1  dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium">
                       {item}
                     </span>
                   ))}

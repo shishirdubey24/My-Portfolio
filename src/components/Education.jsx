@@ -6,7 +6,7 @@ const Education = () => {
     <div id="education" className="font-medium p-6 mt-20  min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Academic Journey
         </div>
@@ -20,7 +20,7 @@ const Education = () => {
 
       <div className="max-w-4xl mx-auto space-y-8">
         {/* 🎓 Master's Degree */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="relative p-8">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg flex-shrink-0">

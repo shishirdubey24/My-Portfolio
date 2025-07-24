@@ -6,7 +6,7 @@ const Projects = () => {
     <div id="project" className="font-medium p-6 mt-20  min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Portfolio Showcase
         </div>
@@ -20,8 +20,8 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 max-w-7xl mx-auto">
         
-        {/* 🚀 Project 1: Code Editor */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {/*  Project 1: Code Editor */}
+        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <div className="relative p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
@@ -63,7 +63,7 @@ const Projects = () => {
         </div>
 
         {/* ✅ Features for Code Editor */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="relative p-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
               <HiSparkles className="text-gray-500 dark:text-gray-400" />
@@ -87,7 +87,7 @@ const Projects = () => {
         </div>
 
         {/* 🚀 Project 2: Full Stack E-Commerce */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div className="group relative overflow-hidden rounded-xl dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <div className="relative p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">

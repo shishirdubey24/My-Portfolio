@@ -6,7 +6,7 @@ const Certifications = () => {
     <div id="certifications" className="font-medium p-6 mt-20  min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Professional Achievements
         </div>
@@ -21,7 +21,7 @@ const Certifications = () => {
       <div className="max-w-6xl mx-auto space-y-8">
         
         {/* 🏆 JavaScript Certification */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Content */}
             <div className="relative p-8">
@@ -63,7 +63,7 @@ const Certifications = () => {
         </div>
 
         {/* 🏆 IIT BHU COPS WEEK */}
-        <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Content */}
             <div className="relative p-8">

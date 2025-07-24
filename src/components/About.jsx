@@ -97,10 +97,10 @@ const About = () => {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in-rotate delay-500">
             <div className="relative">
               {/* Floating background card for depth */}
-              <div className="absolute inset-0 bg-gray-500/50 backdrop-blur-sm rounded-2xl transform rotate-2 scale-105 shadow-md animate-float"></div>
+              <div className="absolute inset-0 bg-gray-700/50 backdrop-blur-sm rounded-2xl transform rotate-2 scale-105 shadow-md animate-float"></div>
 
               {/* Foreground main card */}
-              <div className="relative bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl transform hover:rotate-1 transition-transform duration-300 hover-scale">
+              <div className="relative bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl transform hover:rotate-1 transition-transform duration-300 hover-scale">
                 <div className="text-center">
                   {/* Avatar / Icon */}
                   <div className="w-32 h-32 mx-auto mb-6 bg-gray-600/70 backdrop-blur-sm rounded-2xl flex items-center justify-center animate-pulse-once delay-800">
