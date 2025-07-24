@@ -6,7 +6,7 @@ import ContactDetails from './components/Contact'
 import Education from './components/Education'
 import Header from './components/Header'
 import Projects from './components/Projects'
-//import Skill from './Components/Skill'
+
 import Skill from "./components/Skill"
 function App() {
   return (
