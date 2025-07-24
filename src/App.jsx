@@ -11,7 +11,7 @@ import Skill from "./components/Skill"
 function App() {
   return (
     <>
-      <div className="bg-gradient-to-b from-[#0a192f] via-[#1e293b] to-[#1f2937] min-h-screen text-white">
+      <div className=" min-h-screen ">
         <Header/>
         <About/>
         <Skill/>
