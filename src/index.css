@@ -1,125 +1,37 @@
+
+
 /* =============================================================================
-   DEVICE-INDEPENDENT COLOR SYSTEM
-   Works consistently across all devices without relying on system preferences
+   CLEAN GRAY BACKGROUND SYSTEM - Global
    ============================================================================= */
 
-/* Root color variables - always consistent */
-:root {
-  --bg-primary: #f8fafc;        /* Very light gray */
-  --bg-secondary: #ffffff;      /* Pure white */
-  --bg-card: #ffffff;           /* Card background */
-  --text-primary: #1e293b;      /* Dark slate */
-  --text-secondary: #475569;    /* Medium slate */
-  --text-muted: #64748b;        /* Light slate */
-  --border-color: #e2e8f0;      /* Light border */
-  --accent-color: #3b82f6;      /* Blue accent */
+html {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-/* Dark theme colors - applied via class, not media query */
-[data-theme="dark"] {
-  --bg-primary: #0f172a;        /* Very dark slate */
-  --bg-secondary: #1e293b;      /* Dark slate */
-  --bg-card: #334155;           /* Medium dark slate */
-  --text-primary: #f1f5f9;      /* Very light slate */
-  --text-secondary: #cbd5e1;    /* Light slate */
-  --text-muted: #94a3b8;        /* Medium light slate */
-  --border-color: #475569;      /* Dark border */
-  --accent-color: #60a5fa;      /* Light blue accent */
-}
-
-/* Apply colors using variables */
-html, body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+body {
   margin: 0;
   padding: 0;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Override any system preferences */
+/* Ensure root has full coverage */
+#root {
+  min-height: 100vh;
+}
+
+/* Remove unnecessary forced background-color utilities */
+
 * {
   color-scheme: normal;
+  scroll-behavior: smooth;
 }
 
 /* =============================================================================
-   CONSISTENT UTILITY CLASSES
-   Replace Tailwind dark mode classes with these
+   ANIMATIONS - Custom, Reusable & Performant
    ============================================================================= */
 
-/* Background classes */
-.bg-primary { background-color: var(--bg-primary); }
-.bg-secondary { background-color: var(--bg-secondary); }
-.bg-card { background-color: var(--bg-card); }
-
-/* Text classes */
-.text-primary { color: var(--text-primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-muted { color: var(--text-muted); }
-
-/* Border classes */
-.border-default { border-color: var(--border-color); }
-
-/* Card styling */
-.portfolio-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-}
-
-.portfolio-card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Button styling */
-.btn-primary {
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  border: 2px solid var(--text-primary);
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-primary:hover {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-secondary:hover {
-  border-color: var(--text-primary);
-  background-color: var(--bg-card);
-}
-
-/* =============================================================================
-   LIGHTWEIGHT ANIMATIONS FOR PORTFOLIO COMPONENTS
-   Optimized for React Performance & Clean Card Designs
-   ============================================================================= */
-
-/* Base Keyframe Animations */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -171,7 +83,6 @@ html, body {
   50% { transform: translateY(-10px); }
 }
 
-/* Animation Classes - Hardware Accelerated */
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
   opacity: 0;
@@ -228,7 +139,7 @@ html, body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Delay Classes for Staggered Animations */
+/* Animation Delays */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
@@ -242,7 +153,7 @@ html, body {
 .delay-1500 { animation-delay: 1500ms; }
 .delay-2000 { animation-delay: 2000ms; }
 
-/* Performance Optimizations */
+/* Optimize GPU layers */
 .animate-fade-in,
 .animate-fade-in-up,
 .animate-fade-in-down,
@@ -255,11 +166,13 @@ html, body {
   perspective: 1000px;
 }
 
-/* Hover Effects for Interactive Elements */
+/* =============================================================================
+   Hover Effects
+   ============================================================================= */
+
 .hover-lift {
   transition: transform 0.2s ease-out;
 }
-
 .hover-lift:hover {
   transform: translateY(-2px);
 }
@@ -267,33 +180,73 @@ html, body {
 .hover-scale {
   transition: transform 0.2s ease-out;
 }
-
 .hover-scale:hover {
   transform: scale(1.02);
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
+/* Hover/Focus States */
+.hover\:bg-gray-800:hover { background-color: #1e293b !important; }
+.hover\:bg-gray-100:hover { background-color: #e2e8f0 !important; }
+.hover\:border-gray-400:hover { border-color: #64748b !important; }
+.hover\:border-gray-500:hover { border-color: #475569 !important; }
+.focus\:border-gray-400:focus { border-color: #64748b !important; }
+.focus\:ring-gray-400:focus { --tw-ring-color: #64748b !important; }
 
-/* Ultra-smooth scrolling for all browsers */
-* {
-  scroll-behavior: smooth;
+/* =============================================================================
+   Shadow Utilities
+   ============================================================================= */
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
 }
 
 /* =============================================================================
-   COMPONENT LOADING OPTIMIZATION
-   Ensures smooth entrance for all portfolio sections
+   Mobile Optimization
    ============================================================================= */
 
-/* Initial state - prevents layout shift */
-.portfolio-loaded {
-  /* Add any global loaded state styles if needed */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
 }
 
-/* Remove animations for users who prefer reduced motion */
+@media (max-width: 768px) {
+  html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-scale-in-rotate,
+  .animate-bounce-in {
+    animation-duration: 0.6s;
+  }
+}
+
+/* =============================================================================
+   Accessibility - Reduced Motion
+   ============================================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
   .animate-fade-in-up,
@@ -308,97 +261,8 @@ html {
     opacity: 1;
     transform: none;
   }
-  
+
   html, * {
     scroll-behavior: auto;
-  }
-}
-
-/* =============================================================================
-   MOBILE OPTIMIZATION
-   Ensures consistent experience across all devices
-   ============================================================================= */
-
-/* Prevent mobile browser zoom on input focus */
-@viewport {
-  width: device-width;
-  zoom: 1.0;
-}
-
-/* Mobile-specific optimizations */
-@media (max-width: 768px) {
-  html, body {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-  
-  /* Optimize animations for mobile performance */
-  .animate-fade-in,
-  .animate-fade-in-up,
-  .animate-fade-in-down,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in,
-  .animate-scale-in-rotate,
-  .animate-bounce-in {
-    animation-duration: 0.6s; /* Faster on mobile */
-  }
-
-  /* Ensure buttons work well on mobile */
-  .btn-primary,
-  .btn-secondary {
-    min-height: 44px; /* iOS touch target minimum */
-    font-size: 16px; /* Prevent zoom on iOS */
-  }
-}
-
-/* =============================================================================
-   RESPONSIVE GRID UTILITIES
-   For consistent layout across all components
-   ============================================================================= */
-
-.grid {
-  display: grid;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-12 {
-  gap: 3rem;
-}
-
-@media (min-width: 768px) {
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

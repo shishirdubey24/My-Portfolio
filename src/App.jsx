@@ -10,7 +10,7 @@ import Projects from './components/Projects'
 function App() {
   return (
    <>
-  <div className="bg-primary min-h-screen">
+     <div className="bg-gradient-to-b from-[#0a192f]  via-[#1e293b] to-[#1f2937] min-h-screen text-white">
    <Header/>
     <About/>
    <Skill/>
