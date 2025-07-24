@@ -41,11 +41,11 @@ const Skill = () => {
     >
       {/* Header Section */}
       <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-        <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gray-700 border border-gray-700 rounded-full text-gray-300 text-sm font-medium mb-4 ${isVisible ? 'animate-fade-in-down delay-300' : 'opacity-0'}`}>
+        <div className={`inline-flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-full text-gray-300 text-sm font-medium mb-4 ${isVisible ? 'animate-fade-in-down delay-300' : 'opacity-0'}`}>
           <HiSparkles className="text-lg" />
           Technical Skills
         </div>
-        <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 ${isVisible ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
+        <h1 className={`text-4xl md:text-5xl font-bold text-gray-700 dark:text-white mb-4 ${isVisible ? 'animate-fade-in delay-100' : 'opacity-0'}`}>
           My Skills
         </h1>
         <p className={`text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg ${isVisible ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
