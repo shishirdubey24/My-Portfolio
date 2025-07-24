@@ -27,10 +27,10 @@ const Education = () => {
                 <FaGraduationCap className="text-2xl text-gray-600 dark:text-gray-400" />
               </div>
               <div className="flex-grow">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h2 className="text-2xl font-bold text-gray-200 dark:text-white mb-2">
                   Master of Computer Applications (MCA)
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+                <p className="text-lg text-gray-500 dark:text-gray-300 mb-2">
                   Dr. APJ Abdul Kalam Technical University
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 font-medium">
@@ -49,10 +49,10 @@ const Education = () => {
                 <FaGraduationCap className="text-2xl text-gray-600 dark:text-gray-400" />
               </div>
               <div className="flex-grow">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h2 className="text-2xl font-bold text-gray-200 dark:text-white mb-2">
                   Bachelor of Science (Computer Science)
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+                <p className="text-lg text-gray-500 dark:text-gray-300 mb-2">
                   KNIPSS, Sultanpur
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 font-medium">
@@ -71,12 +71,12 @@ const Education = () => {
                 <FaGraduationCap className="text-2xl text-gray-600 dark:text-gray-400" />
               </div>
               <div className="flex-grow">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h2 className="text-2xl font-bold text-gray-200 dark:text-white mb-2">
                   Academic Foundation
                 </h2>
                 <div className="space-y-3">
                   <div>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
+                    <p className="text-lg text-gray-500 dark:text-gray-300 font-medium">
                       Intermediate (12th Grade)
                     </p>
                     <p className="text-gray-500 dark:text-gray-400">
@@ -84,7 +84,7 @@ const Education = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
+                    <p className="text-lg text-gray-500 dark:text-gray-300 font-medium">
                       High School (10th Grade)
                     </p>
                     <p className="text-gray-500 dark:text-gray-400">
