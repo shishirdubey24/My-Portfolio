@@ -6,7 +6,7 @@ const Certifications = () => {
     <div id="certifications" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-full text-gray-300 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Professional Achievements
         </div>
@@ -21,7 +21,7 @@ const Certifications = () => {
       <div className="max-w-6xl mx-auto space-y-8">
         
         {/* 🏆 JavaScript Certification */}
-        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Content */}
             <div className="relative p-8">
@@ -35,12 +35,12 @@ const Certifications = () => {
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
                     Completed the JavaScript Certification Test by Prashant Sir after his comprehensive YouTube course. 
-                    The certification test contained **49 questions** covering a **comprehensive mixture of all JavaScript topics** 
+                    The certification test contained <strong>49 questions</strong> covering a <strong>comprehensive mixture of all JavaScript topics</strong> 
                     including fundamentals, advanced concepts, and practical applications.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {['JavaScript', 'ES6+', 'DOM Manipulation', 'Async Programming'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
+                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-600">
                         {skill}
                       </span>
                     ))}
@@ -55,7 +55,7 @@ const Certifications = () => {
                 <img 
                   src="./js.jpg"
                   alt="JavaScript Certification Certificate" 
-                  className="w-full h-auto rounded-xl shadow-lg border border-gray-200 dark:border-gray-600 hover:scale-105 transition-transform duration-300"
+                  className="w-full h-auto rounded-xl shadow-lg border border-gray-600 hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -63,7 +63,7 @@ const Certifications = () => {
         </div>
 
         {/* 🏆 IIT BHU COPS WEEK */}
-        <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Content */}
             <div className="relative p-8">
@@ -82,7 +82,7 @@ const Certifications = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {['Competitive Programming', 'Algorithm Design', 'Problem Solving', 'IIT BHU'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-600">
+                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-600">
                         {skill}
                       </span>
                     ))}
@@ -97,7 +97,7 @@ const Certifications = () => {
                 <img 
                   src="/Hack_Img.jpg" 
                   alt="IIT BHU COPS WEEK 25 Certificate" 
-                  className="w-full h-auto rounded-xl shadow-lg border border-gray-200 dark:border-gray-600 hover:scale-105 transition-transform duration-300"
+                  className="w-full h-auto rounded-xl shadow-lg border border-gray-600 hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>

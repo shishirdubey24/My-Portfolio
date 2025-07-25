@@ -24,7 +24,7 @@ const ContactDetails = () => {
     <div id="contact" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-full text-gray-300 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Get In Touch
         </div>
@@ -40,7 +40,7 @@ const ContactDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Contact Information Card */}
-          <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative p-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-2 rounded-lg">
@@ -102,7 +102,7 @@ const ContactDetails = () => {
           </div>
 
           {/* Contact Form Card */}
-          <div className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative p-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-2 rounded-lg">

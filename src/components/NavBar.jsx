@@ -25,11 +25,11 @@ const NavBar = () => {
             duration={0}
             offset={-80}
             spy={true}
-            activeClass="text-gray-900 dark:text-white"
-            className="font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 relative group cursor-pointer py-2"
+            activeClass="text-white"
+            className="font-medium text-gray-100 hover:text-white transition-colors duration-300 relative group cursor-pointer py-2"
           >
             {item.name}
-            <span className="absolute left-0 bottom-0 w-full h-[2px]  dark:bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
         ))}
       </nav>
@@ -37,14 +37,14 @@ const NavBar = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+        className="md:hidden p-2 text-gray-100 hover:text-white transition-colors"
       >
         {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
       </button>
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-lg md:hidden">
+        <div className="absolute top-full left-0 right-0 backdrop-blur-md border-t border-gray-600 shadow-lg md:hidden" style={{ backgroundColor: 'rgba(24, 31, 40, 0.95)' }}>
           <nav className="flex flex-col py-4">
             {links.map((item) => (
               <Link
@@ -54,9 +54,9 @@ const NavBar = () => {
                 duration={0}
                 offset={-80}
                 spy={true}
-                activeClass="text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800"
+                activeClass="text-white border-l-2 border-white"
                 onClick={() => setIsOpen(false)}
-                className="font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 cursor-pointer px-6 py-3"
+                className="font-medium text-gray-100 hover:text-white hover:border-l-2 hover:border-gray-400 transition-all duration-300 cursor-pointer px-6 py-3"
               >
                 {item.name}
               </Link>

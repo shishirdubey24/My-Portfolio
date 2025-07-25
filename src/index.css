@@ -1,35 +1,49 @@
 /* =============================================================================
-   SINGLE BACKGROUND COLOR SYSTEM - Consistent & Clean
+   SINGLE BACKGROUND COLOR SYSTEM - Production Ready
    ============================================================================= */
 
 html, body {
   background-color: #181f28 !important;
-  color: #ffffff !important;
+  color: #ffffff !important; /* ADD: Default text color */
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   margin: 0;
   padding: 0;
+  /* ADD: Prevent browser color scheme overrides */
+  -webkit-color-scheme: normal !important;
+  color-scheme: normal !important;
 }
 
 #root {
   min-height: 100vh;
   background-color: #181f28 !important;
+  color: inherit; /* ADD: Ensure text color inheritance */
 }
 
 #root > div {
   background-color: #181f28 !important;
 }
 
+/* ADD: Force consistent colors across all browsers */
 * {
-  color-scheme: normal;
+  color-scheme: normal !important;
+  -webkit-color-scheme: normal !important;
   scroll-behavior: smooth;
+}
+
+/* ADD: Prevent system dark/light mode interference */
+@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
+  html, body {
+    background-color: #181f28 !important;
+    color: #ffffff !important;
+  }
 }
 
 /* =============================================================================
    LIGHTWEIGHT ANIMATIONS - Only What You Actually Use
    ============================================================================= */
 
-/* Essential Keyframes */
+/* Your existing animations stay the same... */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -138,7 +152,7 @@ html, body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Minimal Delay Classes - As You Requested */
+/* Minimal Delay Classes */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
@@ -157,7 +171,7 @@ html, body {
 }
 
 /* =============================================================================
-   ESSENTIAL INTERACTIONS - Only What You Actually Use
+   ESSENTIAL INTERACTIONS - Enhanced for Dark Background
    ============================================================================= */
 
 .hover-lift {
@@ -176,22 +190,31 @@ html, body {
   transform: scale(1.02);
 }
 
-/* Essential Shadows */
+/* Enhanced Shadows for Dark Background */
 .shadow-lg {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
+
 .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-              0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* =============================================================================
-   MOBILE OPTIMIZATION
+   MOBILE OPTIMIZATION - Enhanced
    ============================================================================= */
 
 @media (max-width: 768px) {
+  /* Force colors on mobile devices */
+  html, body {
+    background-color: #181f28 !important;
+    color: #ffffff !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
   .animate-fade-in,
   .animate-fade-in-up,
   .animate-fade-in-down,
