@@ -1,108 +1,135 @@
 import { FaCertificate } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";
 
+const CERTIFICATIONS = [
+  {
+    title: "GFG Nation Skill-Up Program (Top 50)",
+    description: (
+      <>
+        Secured <strong>Rank 41</strong>, placing in the{" "}
+        <strong>Top 50 out of 12,500+</strong> participants nationwide.
+        Demonstrates consistency, competitive problem-solving, and performance
+        under large-scale evaluation.
+      </>
+    ),
+    skills: ["Problem Solving", "Competitive Ranking", "Consistency", "GFG"],
+    image: "/GFGSkillUp.jpg",
+    pdf: "/certificates/gfg-nation-skill-up.pdf",
+  },
+  {
+    title: "Frontend Battle – IIT Bhubaneswar",
+    description: (
+      <>
+        Certified by <strong>IIT Bhubaneswar</strong> for participation in a
+        frontend-focused Vibe Coding competition. Reflects practical UI
+        development, logical breakdown, and execution under constraints.
+      </>
+    ),
+    skills: ["Frontend Engineering", "UI Logic", "Vibe Coding", "IIT Bhubaneswar"],
+    image: "/FrontendVibeCode.jpg",
+    pdf: "/certificates/frontend-battle-iit-bhubaneswar.pdf",
+  },
+  {
+    title: "IIT BHU – COPS Week 25",
+    description: (
+      <>
+        Participated in IIT BHU’s COPS Week, focusing on algorithmic thinking,
+        structured problem-solving, and translating logic into correct
+        implementations.
+      </>
+    ),
+    skills: ["Algorithms", "Problem Solving", "Logical Thinking", "IIT BHU"],
+    image: "/Hack_Img.jpg",
+  },
+  {
+    title: "JavaScript Certification Test",
+    description: (
+      <>
+        Completed a comprehensive JavaScript assessment covering core language
+        behavior, async flow, DOM interaction, and modern ES6+ features.
+      </>
+    ),
+    skills: ["JavaScript", "Async", "Closures", "DOM"],
+    image: "/js.jpg",
+  },
+];
+
 const Certifications = () => {
   return (
     <div id="certifications" className="font-medium p-6 mt-20 min-h-screen">
-      {/* Header Section */}
+      {/* Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
-          Professional Achievements
+          Skill Validation
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Certifications
+          Certifications & Competitive Achievements
         </h1>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-          Professional certifications and achievements that validate my technical expertise
+          Ranked programs and competitions that reflect applied skills,
+          execution, and consistency
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto space-y-8">
-        
-        {/* 🏆 JavaScript Certification */}
-        <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Content */}
-            <div className="relative p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 rounded-lg flex-shrink-0">
-                  <FaCertificate className="text-2xl text-gray-300" />
-                </div>
-                <div className="flex-grow">
-                  <h2 className="text-2xl font-bold text-white mb-3">
-                    JavaScript Certification Test
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Completed the JavaScript Certification Test by Prashant Sir after his comprehensive YouTube course. 
-                    The certification test contained <strong>49 questions</strong> covering a <strong>comprehensive mixture of all JavaScript topics</strong> 
-                    including fundamentals, advanced concepts, and practical applications.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {['JavaScript', 'ES6+', 'DOM Manipulation', 'Async Programming'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-600">
-                        {skill}
-                      </span>
-                    ))}
+        {CERTIFICATIONS.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-xl border border-gray-600 shadow-lg"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Content */}
+              <div className="p-8">
+                <div className="flex gap-4">
+                  <FaCertificate className="text-2xl text-gray-300 flex-shrink-0" />
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-3">
+                      {item.title}
+                    </h2>
+                    <p className="text-gray-300 mb-4">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 border border-gray-600 rounded-full text-sm text-gray-300"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Certificate Image */}
-            <div className="relative p-8 lg:p-4 flex items-center justify-center">
-              <div className="w-full max-w-sm">
-                <img 
-                  src="./js.jpg"
-                  alt="JavaScript Certification Certificate" 
-                  className="w-full h-auto rounded-xl shadow-lg border border-gray-600 hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* 🏆 IIT BHU COPS WEEK */}
-        <div className="group relative overflow-hidden rounded-xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Content */}
-            <div className="relative p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 rounded-lg flex-shrink-0">
-                  <FaCertificate className="text-2xl text-gray-300" />
-                </div>
-                <div className="flex-grow">
-                  <h2 className="text-2xl font-bold text-white mb-3">
-                    IIT BHU COPS WEEK 25
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Participated in the prestigious IIT BHU COPS (Computer Programming and Software) Week 25, 
-                    a competitive programming and software development event. This participation demonstrates 
-                    proficiency in algorithmic thinking, problem-solving, and technical implementation skills.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Competitive Programming', 'Algorithm Design', 'Problem Solving', 'IIT BHU'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 text-gray-300 rounded-full text-sm font-medium border border-gray-600">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Certificate Image */}
-            <div className="relative p-8 lg:p-4 flex items-center justify-center">
-              <div className="w-full max-w-sm">
-                <img 
-                  src="/Hack_Img.jpg" 
-                  alt="IIT BHU COPS WEEK 25 Certificate" 
-                  className="w-full h-auto rounded-xl shadow-lg border border-gray-600 hover:scale-105 transition-transform duration-300"
-                />
+              {/* Certificate */}
+              <div className="p-4 flex items-stretch">
+                {item.pdf ? (
+                  <a
+                    href={item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain rounded-xl border border-gray-600"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-contain rounded-xl border border-gray-600"
+                  />
+                )}
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
