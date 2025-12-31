@@ -1,252 +1,194 @@
+@import "tailwindcss";
+
 /* =============================================================================
-   SINGLE BACKGROUND COLOR SYSTEM - Production Ready
+   MERN THEME SYSTEM - Deep Slate & Emerald
    ============================================================================= */
 
-html, body {
-  background-color: #181f28 !important;
-  color: #ffffff !important; /* ADD: Default text color */
+@theme {
+  --color-brand-primary: #06b6d4;
+  /* Cyan 500 */
+  --color-brand-secondary: #84cc16;
+  /* Lime 500 */
+  --color-brand-tertiary: #f59e0b;
+  /* Amber 500 */
+  --color-brand-dark: #0b1120;
+  /* Deep Slate/Navy */
+  --color-brand-surface: #1e293b;
+  /* Slate 800 */
+  --color-brand-border: #334155;
+  /* Slate 700 */
+
+  --font-family-sans: "Outfit", sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: var(--color-brand-dark) !important;
+  color: #f8fafc !important;
+  /* Slate 50 */
+  font-family: "Outfit", sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   margin: 0;
   padding: 0;
-  /* ADD: Prevent browser color scheme overrides */
-  -webkit-color-scheme: normal !important;
-  color-scheme: normal !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
   min-height: 100vh;
-  background-color: #181f28 !important;
-  color: inherit; /* ADD: Ensure text color inheritance */
+  background-color: var(--color-brand-dark) !important;
+  color: inherit;
+  overflow-x: hidden;
 }
 
-#root > div {
-  background-color: #181f28 !important;
+/* Custom Selection Color */
+::selection {
+  background-color: rgba(6, 182, 212, 0.3);
+  /* Cyan with opacity */
+  color: #ffffff;
 }
 
-/* ADD: Force consistent colors across all browsers */
-* {
-  color-scheme: normal !important;
-  -webkit-color-scheme: normal !important;
-  scroll-behavior: smooth;
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-/* ADD: Prevent system dark/light mode interference */
-@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
-  html, body {
-    background-color: #181f28 !important;
-    color: #ffffff !important;
-  }
+::-webkit-scrollbar-track {
+  background: var(--color-brand-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  /* Slate 700 */
+  border-radius: 5px;
+  border: 2px solid var(--color-brand-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+  /* Slate 600 */
 }
 
 /* =============================================================================
-   LIGHTWEIGHT ANIMATIONS - Only What You Actually Use
+   ANIMATIONS
    ============================================================================= */
 
-/* Your existing animations stay the same... */
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes slide-in-left {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
+@keyframes scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 
-@keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes scale-in-rotate {
-  from { opacity: 0; transform: scale(0.8) rotate(-5deg); }
-  to { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-
-@keyframes bounce-in {
-  from { opacity: 0; transform: scale(0); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes pulse-once {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* Animation Classes */
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
+@keyframes pulse-cyan {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 0 rgba(6, 182, 212, 0.1);
+  }
 }
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
 }
 
 .animate-fade-in-down {
-  animation: fade-in-down 0.6s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
+  animation: fade-in-down 0.8s ease-out forwards;
 }
 
-.animate-slide-in-left {
-  animation: slide-in-left 0.6s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.8s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.animate-scale-in-rotate {
-  animation: scale-in-rotate 1s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.animate-bounce-in {
-  animation: bounce-in 0.4s ease-out forwards;
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-.animate-pulse-once {
-  animation: pulse-once 0.6s ease-in-out;
+.animate-scale-up {
+  animation: scale-up 0.5s ease-out forwards;
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Minimal Delay Classes */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-
-/* Hardware Acceleration */
-.animate-fade-in,
-.animate-fade-in-up,
-.animate-fade-in-down,
-.animate-slide-in-left,
-.animate-slide-in-right,
-.animate-scale-in,
-.animate-scale-in-rotate,
-.animate-bounce-in {
-  backface-visibility: hidden;
-  perspective: 1000px;
+.animate-pulse-slow {
+  animation: pulse-cyan 3s ease-in-out infinite;
 }
 
-/* =============================================================================
-   ESSENTIAL INTERACTIONS - Enhanced for Dark Background
-   ============================================================================= */
-
-.hover-lift {
-  transition: transform 0.2s ease-out;
+/* Delays */
+.delay-100 {
+  animation-delay: 100ms;
 }
 
-.hover-lift:hover {
-  transform: translateY(-2px);
+.delay-200 {
+  animation-delay: 200ms;
 }
 
-.hover-scale {
-  transition: transform 0.2s ease-out;
+.delay-300 {
+  animation-delay: 300ms;
 }
 
-.hover-scale:hover {
-  transform: scale(1.02);
+.delay-500 {
+  animation-delay: 500ms;
 }
 
-/* Enhanced Shadows for Dark Background */
-.shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+/* Utilities */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
-.shadow-xl {
-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+.hover-glow-cyan:hover {
+  box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.3);
+  border-color: rgba(6, 182, 212, 0.5);
 }
 
-/* =============================================================================
-   MOBILE OPTIMIZATION - Enhanced
-   ============================================================================= */
-
-@media (max-width: 768px) {
-  /* Force colors on mobile devices */
-  html, body {
-    background-color: #181f28 !important;
-    color: #ffffff !important;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-  
-  .animate-fade-in,
-  .animate-fade-in-up,
-  .animate-fade-in-down,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in,
-  .animate-scale-in-rotate,
-  .animate-bounce-in {
-    animation-duration: 0.6s;
-  }
-}
-
-/* =============================================================================
-   ACCESSIBILITY
-   ============================================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in,
-  .animate-fade-in-up,
-  .animate-fade-in-down,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in,
-  .animate-scale-in-rotate,
-  .animate-bounce-in,
-  .animate-float {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  html, * {
-    scroll-behavior: auto;
-  }
+.text-gradient-cyan {
+  background: linear-gradient(to right, #06b6d4, #84cc16);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

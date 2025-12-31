@@ -2,9 +2,10 @@ import {
   FaCode,
   FaToolbox,
   FaDatabase,
-  FaReact
+  FaReact,
+  FaNodeJs
 } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { SiMongodb, SiJavascript } from "react-icons/si";
 import { HiSparkles } from "react-icons/hi";
 import { useEffect, useRef, useState } from "react";
 
@@ -29,46 +30,33 @@ const Skill = () => {
     };
   }, []);
 
-  const Section = ({ icon: Icon, title, items, delay = 400 }) => (
+  const Section = ({ icon: Icon, title, items, delay = 0, colorClass = "text-cyan-400", borderClass = "hover:border-cyan-500/50" }) => (
     <div
-      className={`group relative overflow-hidden rounded-xl bg-gray-700/50 backdrop-blur-sm border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift ${
-        isVisible ? `animate-scale-in delay-${delay}` : "opacity-0"
-      }`}
+      className={`group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${borderClass} ${isVisible ? `animate-fade-in-up` : "opacity-0"
+        }`}
+      style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="p-6">
-        <div
-          className={`flex items-center gap-3 mb-6 ${
-            isVisible ? `animate-fade-in delay-${delay + 200}` : "opacity-0"
-          }`}
-        >
-          <div
-            className={`p-2 bg-gray-600 rounded-lg ${
-              isVisible ? `animate-pulse-once delay-${delay + 400}` : ""
-            }`}
+      {/* Background Gradient */}
+      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${colorClass.replace('text-', 'from-')}/10 to-transparent blur-2xl -z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100`}></div>
+
+      <div className="flex items-center gap-3 mb-6">
+        <div className={`p-3 rounded-xl bg-slate-950 border border-slate-800 ${colorClass}`}>
+          {Icon && <Icon className="text-2xl" />}
+        </div>
+        <h2 className="text-xl font-bold text-slate-100 tracking-wide">
+          {title}
+        </h2>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {items.map((skill) => (
+          <span
+            key={skill}
+            className="px-3 py-1.5 bg-slate-950 text-slate-400 rounded-lg text-sm font-medium border border-slate-800 hover:text-white hover:border-slate-600 transition-colors"
           >
-            {Icon && <Icon className="text-xl text-gray-300" />}
-          </div>
-          <h2 className="text-xl font-bold text-white">
-            {title}
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          {items.map((skill, index) => (
-            <span
-              key={skill}
-              className={`px-3 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm font-medium border border-gray-700 hover:border-gray-500 transition-colors text-center hover-scale ${
-                isVisible ? "animate-bounce-in" : "opacity-0"
-              }`}
-              style={{
-                animationDelay: isVisible
-                  ? `${delay + 500 + index * 50}ms`
-                  : "0ms"
-              }}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -77,112 +65,100 @@ const Skill = () => {
     <section
       id="skill"
       ref={skillsRef}
-      className="min-h-screen w-full text-white py-20 px-6"
-      style={{background: 'transparent'}}
+      className="min-h-screen w-full py-20 px-6 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
-          className={`text-center mb-16 ${
-            isVisible ? "animate-fade-in-up" : "opacity-0"
-          }`}
+          className={`mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+            }`}
         >
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4 ${
-              isVisible ? "animate-fade-in-down delay-300" : "opacity-0"
-            }`}
-          >
-            <HiSparkles className="text-lg" />
-            Technical Skills
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div
+                className={`inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4`}
+              >
+                <HiSparkles />
+                Tech Stack
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+                My <span className="text-cyan-400">Arsenal</span>
+              </h1>
+              <p className="text-slate-400 max-w-xl text-lg leading-relaxed">
+                A comprehensive look at the technologies I use to build scalable, high-performance web applications.
+              </p>
+            </div>
           </div>
-          <h1
-            className={`text-4xl md:text-5xl font-bold text-white mb-4 ${
-              isVisible ? "animate-fade-in delay-100" : "opacity-0"
-            }`}
-          >
-            My Skills
-          </h1>
-          <p
-            className={`text-gray-300 max-w-2xl mx-auto text-lg ${
-              isVisible ? "animate-fade-in delay-200" : "opacity-0"
-            }`}
-          >
-            A comprehensive overview of my technical expertise and tools I work
-            with
-          </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Frontend - Cyan/Blue */}
+          <div className="lg:col-span-2">
+            <Section
+              icon={FaReact}
+              title="Frontend Ecosystem"
+              colorClass="text-cyan-400"
+              borderClass="hover:border-cyan-500/50"
+              items={[
+                "React.js", "Next.js 14", "TypeScript", "Tailwind CSS",
+                "Redux Toolkit", "Framer Motion", "Shadcn/UI", "Vite"
+              ]}
+              delay={100}
+            />
+          </div>
+
+          {/* Backend - Lime/Green */}
+          <div className="lg:row-span-2">
+            <Section
+              icon={FaNodeJs}
+              title="Backend Infrastructure"
+              colorClass="text-lime-500"
+              borderClass="hover:border-lime-500/50"
+              items={[
+                "Node.js", "Express.js", "RESTful APIs", "GraphQL",
+                "JWT Auth", "Microservices", "Serverless"
+              ]}
+              delay={200}
+            />
+            <div className="h-6"></div> {/* Spacer for grid alignment if needed, or just standard flex gap */}
+            <Section
+              icon={SiMongodb}
+              title="Database & Cloud"
+              colorClass="text-green-500"
+              borderClass="hover:border-green-500/50"
+              items={[
+                "MongoDB", "Mongoose", "PostgreSQL", "Firebase",
+                "Appwrite", "Supabase", "AWS S3"
+              ]}
+              delay={300}
+            />
+          </div>
+
+          {/* Languages - Yellow/Amber */}
           <Section
-            icon={FaCode}
-            title="Programming Languages"
+            icon={SiJavascript}
+            title="Core Languages"
+            colorClass="text-yellow-400"
+            borderClass="hover:border-yellow-500/50"
             items={[
-              "C",
-              "C++",
-              "Java",
-              "JavaScript",
-              "TypeScript",
-              "HTML",
-              "CSS"
+              "JavaScript (ES6+)", "TypeScript", "Java", "C++", "Python Basics"
             ]}
-            delay={100}
+            delay={400}
           />
-          <Section
-            icon={FaReact}
-            title="Frontend Technologies"
-            items={[
-              "React.js",
-              "Next.js",
-              "Redux",
-              "React Router",
-              "Bootstrap",
-              "Tailwind CSS",
-              "Shadcn/UI"
-            ]}
-            delay={100}
-          />
-          <Section
-            icon={SiNextdotjs}
-            title="Backend & Runtime"
-            items={["Node.js", "Express.js", "Next.js API", "REST APIs"]}
-            delay={100}
-          />
-          <Section
-            icon={FaDatabase}
-            title="Database"
-            items={["MySQL", "MongoDB", "Firebase", "Appwrite"]}
-            delay={100}
-          />
+
+          {/* Tools - Slate/Gray */}
           <Section
             icon={FaToolbox}
-            title="Tools & Platforms"
+            title="DevOps & Tools"
+            colorClass="text-slate-200"
+            borderClass="hover:border-slate-500/50"
             items={[
-              "Git",
-              "GitHub",
-              "AWS",
-              "Vite",
-              "Cursor (GenAI)",
-              "Vibe Coding",
-              "Vercel",
-              "Netlify"
+              "Git & GitHub", "Docker", "CI/CD", "Vercel", "Netlify",
+              "Postman", "VS Code", "Figma"
             ]}
-            delay={100}
-          />
-          <Section
-            icon={HiSparkles}
-            title="Development Workflow"
-            items={[
-              "Agile",
-              "CI/CD",
-              "Testing",
-              "Code Review",
-              "Documentation",
-              "Performance Optimization",
-              "Responsive Design",
-              "SEO"
-            ]}
-            delay={100}
+            delay={500}
           />
         </div>
       </div>

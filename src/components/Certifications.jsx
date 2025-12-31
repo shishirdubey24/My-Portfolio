@@ -14,7 +14,8 @@ const CERTIFICATIONS = [
     ),
     skills: ["Problem Solving", "Competitive Ranking", "Consistency", "GFG"],
     image: "/GFGSkillUp.jpg",
-    pdf: "/certificates/gfg-nation-skill-up.pdf",
+    pdf: "/GFGfullStack.pdf",
+    issuer: "GeeksforGeeks",
   },
   {
     title: "Frontend Battle – IIT Bhubaneswar",
@@ -27,7 +28,8 @@ const CERTIFICATIONS = [
     ),
     skills: ["Frontend Engineering", "UI Logic", "Vibe Coding", "IIT Bhubaneswar"],
     image: "/FrontendVibeCode.jpg",
-    pdf: "/certificates/frontend-battle-iit-bhubaneswar.pdf",
+    pdf: "/Frontend certificate.pdf",
+    issuer: "IIT Bhubaneswar",
   },
   {
     title: "IIT BHU – COPS Week 25",
@@ -40,6 +42,8 @@ const CERTIFICATIONS = [
     ),
     skills: ["Algorithms", "Problem Solving", "Logical Thinking", "IIT BHU"],
     image: "/Hack_Img.jpg",
+    pdf: "/Hackathone.pdf",
+    issuer: "IIT BHU",
   },
   {
     title: "JavaScript Certification Test",
@@ -51,6 +55,8 @@ const CERTIFICATIONS = [
     ),
     skills: ["JavaScript", "Async", "Closures", "DOM"],
     image: "/js.jpg",
+    pdf: "",
+    issuer: "Vibe Coding",
   },
 ];
 
@@ -59,14 +65,14 @@ const Certifications = () => {
     <div id="certifications" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full text-gray-300 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-slate-700 bg-slate-900/50 rounded-full text-cyan-400 text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Skill Validation
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Certifications & Competitive Achievements
         </h1>
-        <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+        <p className="text-slate-400 max-w-2xl mx-auto text-lg">
           Ranked programs and competitions that reflect applied skills,
           execution, and consistency
         </p>
@@ -76,25 +82,25 @@ const Certifications = () => {
         {CERTIFICATIONS.map((item) => (
           <div
             key={item.title}
-            className="rounded-xl border border-gray-600 shadow-lg"
+            className="rounded-xl border border-slate-800 bg-slate-900/50 shadow-lg hover:border-cyan-500/30 transition-all duration-300"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Content */}
               <div className="p-8">
                 <div className="flex gap-4">
-                  <FaCertificate className="text-2xl text-gray-300 flex-shrink-0" />
+                  <FaCertificate className="text-2xl text-cyan-400 flex-shrink-0" />
                   <div>
                     <h2 className="text-2xl font-bold text-white mb-3">
                       {item.title}
                     </h2>
-                    <p className="text-gray-300 mb-4">
+                    <p className="text-slate-300 mb-4 leading-relaxed">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {item.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 border border-gray-600 rounded-full text-sm text-gray-300"
+                          className="px-3 py-1 border border-slate-700 bg-slate-800/50 rounded-full text-sm text-cyan-300 font-medium"
                         >
                           {skill}
                         </span>
@@ -116,14 +122,14 @@ const Certifications = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain rounded-xl border border-gray-600"
+                      className="w-full h-full object-contain rounded-xl border border-slate-800 bg-slate-950/50 hover:opacity-90 transition-opacity"
                     />
                   </a>
                 ) : (
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-contain rounded-xl border border-gray-600"
+                    className="w-full h-full object-contain rounded-xl border border-slate-800 bg-slate-950/50"
                   />
                 )}
               </div>
