@@ -1,7 +1,28 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { HiSparkles, HiCode, HiShoppingBag, HiServer } from "react-icons/hi";
+import { useEffect, useRef, useState } from "react";
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "-50px 0px -50px 0px" }
+    );
+
+    if (projectsRef.current) observer.observe(projectsRef.current);
+    return () => {
+      if (projectsRef.current) observer.unobserve(projectsRef.current);
+    };
+  }, []);
+
   const projects = [
     {
       title: "Code Snippet Editor",
@@ -10,7 +31,7 @@ const Projects = () => {
       live: "https://editor-snippet.vercel.app/",
       code: "https://github.com/shishirdubey24/Code-Editor.git",
       icon: <HiCode className="text-3xl" />,
-      color: "from-cyan-500 to-blue-500",
+      color: "from-brand-primary to-brand-secondary",
       features: [
         'VS Code-like editing experience',
         'Local snippet persistence',
@@ -25,7 +46,7 @@ const Projects = () => {
       live: "https://trendwired.netlify.app/",
       code: "https://github.com/shishirdubey24/E-commerce-project.git",
       icon: <HiShoppingBag className="text-3xl" />,
-      color: "from-lime-500 to-emerald-500",
+      color: "from-brand-secondary to-brand-tertiary",
       features: [
         'Secure Appwrite Authentication',
         'Redux State Management',
@@ -40,7 +61,7 @@ const Projects = () => {
       live: null,
       code: "https://github.com/shishirdubey24/Shopify-Clone.git",
       icon: <HiServer className="text-3xl" />,
-      color: "from-amber-500 to-orange-500",
+      color: "from-brand-tertiary to-brand-primary",
       features: [
         'GraphQL Data Layer',
         'Stripe Payment Integration',
@@ -51,85 +72,106 @@ const Projects = () => {
   ];
 
   return (
-    <div id="project" className="relative min-h-screen py-24 overflow-hidden">
+    <div id="project" ref={projectsRef} className="relative min-h-screen py-24 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-secondary/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-20 text-center animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-full text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-6 hover:bg-slate-800 transition-colors">
+        <div className={`mb-20 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-surface border border-brand-border rounded-full text-brand-primary text-sm font-semibold uppercase tracking-wider mb-6 hover:bg-brand-surface/80 transition-colors">
             <HiSparkles className="animate-pulse" />
             <span>Engineering Portfolio</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
-            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-lime-400">Digital Reality</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tighter">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600">Projects</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Showcasing high-performance applications built with modern architecture and design-first thinking.
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed font-light">
+            A selection of my recent <span className="text-white font-medium">technical works</span> and solutions.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Projects List - One per row */}
+        <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-600 transition-all duration-500 flex flex-col animate-fade-in-up`}
+              className={`group relative bg-brand-surface border border-brand-border/50 rounded-2xl overflow-hidden hover:border-white transition-all duration-700 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] max-w-5xl mx-auto w-full ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.color}`}></div>
+              <div className={`absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b ${project.color} transition-all duration-300`}></div>
 
-              <div className="p-8 flex-grow flex flex-col">
-                <div className="flex justify-between items-start mb-6">
-                  <div className={`p-4 rounded-2xl bg-slate-800/50 text-white border border-slate-700 group-hover:scale-110 transition-transform duration-300`}>
-                    {project.icon}
-                  </div>
-                  <div className="flex gap-3">
-                    {project.live && (
-                      <a href={project.live} target="_blank" rel="noreferrer" className="p-3 bg-slate-800 hover:bg-cyan-500 hover:text-white rounded-xl text-slate-400 transition-all duration-300 transform hover:-translate-y-1" title="Live Demo">
-                        <FaExternalLinkAlt />
-                      </a>
-                    )}
-                    <a href={project.code} target="_blank" rel="noreferrer" className="p-3 bg-slate-800 hover:bg-white hover:text-black rounded-xl text-slate-400 transition-all duration-300 transform hover:-translate-y-1" title="Source Code">
-                      <FaGithub className="text-lg" />
+              <div className="p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-start">
+
+                {/* Action Side - Ultra Compact Row */}
+                <div className="w-full lg:w-1/4 flex flex-row gap-4 mb-4 lg:mb-0">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 lg:flex-none flex flex-col items-center justify-center p-2 min-w-[80px] rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 group/live shadow-md"
+                    >
+                      <FaExternalLinkAlt className="text-base mb-1 group-hover/live:scale-110 transition-transform" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] whitespace-nowrap">Live</span>
                     </a>
+                  )}
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 lg:flex-none flex flex-col items-center justify-center p-2 min-w-[80px] rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 group/code"
+                  >
+                    <FaGithub className="text-xl mb-1 group-hover/code:scale-110 transition-transform" />
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] whitespace-nowrap">Repo</span>
+                  </a>
+                </div>
+
+                {/* Content Side */}
+                <div className="w-full lg:w-3/4 flex flex-col">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-300 leading-relaxed text-base font-normal mb-5">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((t, i) => (
+                        <span key={i} className="px-3 py-1 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg group-hover:border-white/30 transition-colors">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Features Highlight */}
+                  <div className="pt-6 border-t border-white/10">
+                    <h4 className="text-xs font-bold uppercase text-slate-400 mb-4 tracking-widest flex items-center gap-2">
+                      <span className="w-4 h-[1px] bg-brand-primary"></span>
+                      Engineering Highlights
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+                      {project.features.map((feat, i) => (
+                        <div key={i} className="flex items-center gap-3">
+                          <div className={`w-6 h-6 rounded-md bg-white/5 flex items-center justify-center border border-white/10 text-[10px] font-bold`}>
+                            {i + 1}
+                          </div>
+                          <span className="text-sm text-slate-300">
+                            {feat}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-slate-400 leading-relaxed mb-6 text-sm">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack Pills */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tech.map((t, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-medium text-slate-300 bg-slate-800 border border-slate-700 rounded-lg">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Features List */}
-                <div className="mt-auto pt-6 border-t border-slate-800">
-                  <h4 className="text-xs font-semibold uppercase text-slate-500 mb-3 tracking-wider">Key Features</h4>
-                  <ul className="space-y-2">
-                    {project.features.map((feat, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
-                        <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.color}`}></span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           ))}
