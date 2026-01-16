@@ -6,15 +6,15 @@ const About = () => {
   return (
     <div id="home" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-lime-500/10 rounded-full blur-3xl -z-10 animate-pulse-slow delay-500"></div>
+      <div className="absolute top-20 right-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+      <div className="absolute bottom-20 left-20 w-72 h-72 bg-brand-secondary/10 rounded-full blur-3xl -z-10 animate-pulse-slow delay-500"></div>
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Content */}
           <div className="order-2 lg:order-1 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-900/30 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6 animate-fade-in-down delay-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 rounded-full text-brand-primary text-sm font-medium mb-6 animate-fade-in-down delay-100">
               <HiSparkles className="text-lg" />
               <span>Ready to Build</span>
             </div>
@@ -24,7 +24,7 @@ const About = () => {
             </h1>
 
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 min-h-[4rem] md:min-h-[6rem] animate-slide-in-left delay-100 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-lime-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
                 <Typewriter
                   words={['Shishir Dubey']}
                   loop={1}
@@ -33,13 +33,13 @@ const About = () => {
                   typeSpeed={100}
                   deleteSpeed={50}
                   delaySpeed={1000}
-                  cursorColor='#06b6d4'
+                  cursorColor='#ffffff'
                 />
               </span>
             </h2>
 
             <h3 className="text-xl md:text-2xl font-medium text-slate-300 mb-6 min-h-[2rem] md:min-h-[3rem] animate-slide-in-left delay-200">
-              <span className="text-cyan-500">/</span>{' '}
+              <span className="text-brand-primary">/</span>{' '}
               <Typewriter
                 words={['MERN Stack Developer', 'Problem Solver', 'Tech Enthusiast']}
                 loop={0}
@@ -48,12 +48,12 @@ const About = () => {
                 typeSpeed={80}
                 deleteSpeed={50}
                 delaySpeed={2500}
-                cursorColor='#84cc16'
+                cursorColor='#94a3b8'
               />
             </h3>
 
             <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl animate-fade-in delay-200">
-              Crafting pixel-perfect web experiences with modern technologies. I specialize in building scalable, secure, and performant applications using the <span className="text-cyan-400 font-medium">MERN Stack</span>. Let's turn your vision into code.
+              Crafting pixel-perfect web experiences with modern technologies. I specialize in building scalable, secure, and performant applications using the <span className="text-brand-primary font-medium">MERN Stack</span>. Let's turn your vision into code.
             </p>
 
             {/* Professional Highlights */}
@@ -70,7 +70,7 @@ const About = () => {
                     className="flex items-center gap-3 animate-slide-in-left group"
                     style={{ animationDelay: `${300 + index * 100}ms` }}
                   >
-                    <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                    <div className="w-1.5 h-1.5 bg-brand-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
                     <span className="text-slate-300 group-hover:text-white transition-colors">{text}</span>
                   </div>
                 ))}
@@ -83,7 +83,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/shishirdubey-dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-brand-primary text-black hover:bg-brand-secondary rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-white/10 hover:shadow-white/20 hover:-translate-y-1"
               >
                 <FaLinkedin className="text-lg" />
                 <span>LinkedIn</span>
@@ -93,7 +93,7 @@ const About = () => {
                 href="https://github.com/shishirdubey24"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 border border-slate-700 hover:border-cyan-500/50 text-slate-300 hover:text-white rounded-lg font-semibold transition-all duration-300 hover:bg-cyan-500/5"
+                className="flex items-center justify-center gap-2 px-6 py-3 border border-brand-border hover:border-brand-primary/50 text-slate-300 hover:text-white rounded-lg font-semibold transition-all duration-300 hover:bg-brand-primary/5"
               >
                 <FaGithub className="text-lg" />
                 <span>GitHub</span>
@@ -103,7 +103,7 @@ const About = () => {
 
           {/* Right Content - VS Code Snippet */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in-rotate delay-200 relative">
-            <div className="relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-slate-700 shadow-[0_0_20px_rgba(6,182,212,0.1)] hover:shadow-[0_0_25px_rgba(6,182,212,0.2)] hover:border-cyan-500/30 w-full max-w-md group transition-all duration-300">
+            <div className="relative rounded-xl overflow-hidden bg-[#000000] border border-brand-border shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] hover:border-brand-primary/30 w-full max-w-md group transition-all duration-300">
               {/* VS Code Header */}
               <div className="flex items-center justify-between px-4 py-3 bg-[#252525] border-b border-[#1e1e1e]">
                 <div className="flex gap-2">
@@ -112,7 +112,7 @@ const About = () => {
                   <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                 </div>
                 <div className="text-xs text-slate-400 font-mono flex items-center gap-2">
-                  <HiCode className="text-cyan-400" />
+                  <HiCode className="text-brand-primary" />
                   apiService.js
                 </div>
                 <div className="w-10"></div>
