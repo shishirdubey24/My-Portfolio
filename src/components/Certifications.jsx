@@ -65,7 +65,7 @@ const Certifications = () => {
     <div id="certifications" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-slate-700 bg-slate-900/50 rounded-full text-cyan-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-brand-border bg-brand-surface/50 rounded-full text-brand-primary text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Skill Validation
         </div>
@@ -82,13 +82,13 @@ const Certifications = () => {
         {CERTIFICATIONS.map((item) => (
           <div
             key={item.title}
-            className="rounded-xl border border-slate-800 bg-slate-900/50 shadow-lg hover:border-cyan-500/30 transition-all duration-300"
+            className="rounded-xl border border-brand-border bg-brand-surface/50 shadow-lg hover:border-brand-primary/30 transition-all duration-300"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Content */}
               <div className="p-8">
                 <div className="flex gap-4">
-                  <FaCertificate className="text-2xl text-cyan-400 flex-shrink-0" />
+                  <FaCertificate className="text-2xl text-brand-primary flex-shrink-0" />
                   <div>
                     <h2 className="text-2xl font-bold text-white mb-3">
                       {item.title}
@@ -100,7 +100,7 @@ const Certifications = () => {
                       {item.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 border border-slate-700 bg-slate-800/50 rounded-full text-sm text-cyan-300 font-medium"
+                          className="px-3 py-1 border border-brand-border bg-brand-surface rounded-full text-sm text-slate-300 font-medium"
                         >
                           {skill}
                         </span>
@@ -122,14 +122,14 @@ const Certifications = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain rounded-xl border border-slate-800 bg-slate-950/50 hover:opacity-90 transition-opacity"
+                      className="w-full h-full object-contain rounded-xl border border-brand-border bg-brand-dark hover:opacity-90 transition-opacity"
                     />
                   </a>
                 ) : (
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-contain rounded-xl border border-slate-800 bg-slate-950/50"
+                    className="w-full h-full object-contain rounded-xl border border-brand-border bg-brand-dark"
                   />
                 )}
               </div>
