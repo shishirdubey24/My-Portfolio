@@ -30,17 +30,17 @@ const Skill = () => {
     };
   }, []);
 
-  const Section = ({ icon: Icon, title, items, delay = 0, colorClass = "text-cyan-400", borderClass = "hover:border-cyan-500/50" }) => (
+  const Section = ({ icon: Icon, title, items, delay = 0, colorClass = "text-brand-primary", borderClass = "hover:border-brand-primary/50" }) => (
     <div
-      className={`group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${borderClass} ${isVisible ? `animate-fade-in-up` : "opacity-0"
+      className={`group relative overflow-hidden rounded-2xl bg-brand-surface/50 border border-brand-border p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${borderClass} ${isVisible ? `animate-fade-in-up` : "opacity-0"
         }`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Background Gradient */}
-      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${colorClass.replace('text-', 'from-')}/10 to-transparent blur-2xl -z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100`}></div>
+      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary/10 to-transparent blur-2xl -z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100`}></div>
 
       <div className="flex items-center gap-3 mb-6">
-        <div className={`p-3 rounded-xl bg-slate-950 border border-slate-800 ${colorClass}`}>
+        <div className={`p-3 rounded-xl bg-brand-dark border border-brand-border ${colorClass}`}>
           {Icon && <Icon className="text-2xl" />}
         </div>
         <h2 className="text-xl font-bold text-slate-100 tracking-wide">
@@ -52,7 +52,7 @@ const Skill = () => {
         {items.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1.5 bg-slate-950 text-slate-400 rounded-lg text-sm font-medium border border-slate-800 hover:text-white hover:border-slate-600 transition-colors"
+            className="px-3 py-1.5 bg-brand-dark text-slate-400 rounded-lg text-sm font-medium border border-brand-border hover:text-white hover:border-brand-primary/30 transition-colors"
           >
             {skill}
           </span>
@@ -76,13 +76,13 @@ const Skill = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div
-                className={`inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4`}
+                className={`inline-flex items-center gap-2 px-3 py-1 bg-brand-primary/10 border border-brand-primary/20 rounded-full text-brand-primary text-xs font-semibold uppercase tracking-wider mb-4`}
               >
                 <HiSparkles />
                 Tech Stack
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-                My <span className="text-cyan-400">Arsenal</span>
+                My <span className="text-brand-primary">Arsenal</span>
               </h1>
               <p className="text-slate-400 max-w-xl text-lg leading-relaxed">
                 A comprehensive look at the technologies I use to build scalable, high-performance web applications.
@@ -99,8 +99,8 @@ const Skill = () => {
             <Section
               icon={FaReact}
               title="Frontend Ecosystem"
-              colorClass="text-cyan-400"
-              borderClass="hover:border-cyan-500/50"
+              colorClass="text-brand-primary"
+              borderClass="hover:border-brand-primary/50"
               items={[
                 "React.js", "Next.js 14", "TypeScript", "Tailwind CSS",
                 "Redux Toolkit", "Framer Motion", "Shadcn/UI", "Vite"
@@ -114,8 +114,8 @@ const Skill = () => {
             <Section
               icon={FaNodeJs}
               title="Backend Infrastructure"
-              colorClass="text-lime-500"
-              borderClass="hover:border-lime-500/50"
+              colorClass="text-brand-secondary"
+              borderClass="hover:border-brand-secondary/50"
               items={[
                 "Node.js", "Express.js", "RESTful APIs", "GraphQL",
                 "JWT Auth", "Microservices", "Serverless"
@@ -126,8 +126,8 @@ const Skill = () => {
             <Section
               icon={SiMongodb}
               title="Database & Cloud"
-              colorClass="text-green-500"
-              borderClass="hover:border-green-500/50"
+              colorClass="text-brand-secondary"
+              borderClass="hover:border-brand-secondary/50"
               items={[
                 "MongoDB", "Mongoose", "PostgreSQL", "Firebase",
                 "Appwrite", "Supabase", "AWS S3"
@@ -140,8 +140,8 @@ const Skill = () => {
           <Section
             icon={SiJavascript}
             title="Core Languages"
-            colorClass="text-yellow-400"
-            borderClass="hover:border-yellow-500/50"
+            colorClass="text-brand-primary"
+            borderClass="hover:border-brand-primary/50"
             items={[
               "JavaScript (ES6+)", "TypeScript", "Java", "C++", "Python Basics"
             ]}
@@ -152,8 +152,8 @@ const Skill = () => {
           <Section
             icon={FaToolbox}
             title="DevOps & Tools"
-            colorClass="text-slate-200"
-            borderClass="hover:border-slate-500/50"
+            colorClass="text-brand-tertiary"
+            borderClass="hover:border-brand-tertiary/50"
             items={[
               "Git & GitHub", "Docker", "CI/CD", "Vercel", "Netlify",
               "Postman", "VS Code", "Figma"
