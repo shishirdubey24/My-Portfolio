@@ -5,18 +5,18 @@
    ============================================================================= */
 
 @theme {
-  --color-brand-primary: #06b6d4;
-  /* Cyan 500 */
-  --color-brand-secondary: #84cc16;
-  /* Lime 500 */
-  --color-brand-tertiary: #f59e0b;
-  /* Amber 500 */
-  --color-brand-dark: #0b1120;
-  /* Deep Slate/Navy */
-  --color-brand-surface: #1e293b;
-  /* Slate 800 */
-  --color-brand-border: #334155;
-  /* Slate 700 */
+  --color-brand-primary: #ffffff;
+  /* Pure White */
+  --color-brand-secondary: #94a3b8;
+  /* Slate 400 (Grey) */
+  --color-brand-tertiary: #475569;
+  /* Slate 600 (Dark Grey) */
+  --color-brand-dark: #000000;
+  /* Pure Black */
+  --color-brand-surface: #0a0a0a;
+  /* Near Black */
+  --color-brand-border: #1e293b;
+  /* Slate 800 (Subtle Border) */
 
   --font-family-sans: "Outfit", sans-serif;
 }
@@ -47,8 +47,8 @@ body {
 
 /* Custom Selection Color */
 ::selection {
-  background-color: rgba(6, 182, 212, 0.3);
-  /* Cyan with opacity */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* White with opacity */
   color: #ffffff;
 }
 
@@ -125,15 +125,15 @@ body {
   }
 }
 
-@keyframes pulse-cyan {
+@keyframes pulse-white {
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 
   50% {
-    box-shadow: 0 0 20px 0 rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -154,7 +154,7 @@ body {
 }
 
 .animate-pulse-slow {
-  animation: pulse-cyan 3s ease-in-out infinite;
+  animation: pulse-white 3s ease-in-out infinite;
 }
 
 /* Delays */
@@ -176,18 +176,18 @@ body {
 
 /* Utilities */
 .glass-panel {
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(10, 10, 10, 0.6);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.hover-glow-cyan:hover {
-  box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.3);
-  border-color: rgba(6, 182, 212, 0.5);
+.hover-glow-white:hover {
+  box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(to right, #06b6d4, #84cc16);
+.text-gradient-grey {
+  background: linear-gradient(to right, #ffffff, #94a3b8);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
