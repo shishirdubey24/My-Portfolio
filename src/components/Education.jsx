@@ -6,7 +6,7 @@ const Education = () => {
     <div id="education" className="font-medium p-6 mt-20 min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-slate-700 bg-slate-900/50 rounded-full text-cyan-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-brand-border bg-brand-surface/50 rounded-full text-brand-primary text-sm font-medium mb-4">
           <HiSparkles className="text-lg" />
           Academic Journey
         </div>
@@ -20,10 +20,10 @@ const Education = () => {
 
       <div className="max-w-4xl mx-auto space-y-8">
         {/* 🎓 Master's Degree */}
-        <div className="group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 shadow-lg hover:shadow-xl hover:border-cyan-500/30 transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-brand-border bg-brand-surface/50 shadow-lg hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300">
           <div className="relative p-8">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg flex-shrink-0 bg-slate-800 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+              <div className="p-3 rounded-lg flex-shrink-0 bg-brand-surface text-brand-primary group-hover:text-white transition-colors">
                 <FaGraduationCap className="text-2xl" />
               </div>
               <div className="flex-grow">
@@ -42,10 +42,10 @@ const Education = () => {
         </div>
 
         {/* 🎓 Bachelor's Degree */}
-        <div className="group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 shadow-lg hover:shadow-xl hover:border-cyan-500/30 transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-brand-border bg-brand-surface/50 shadow-lg hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300">
           <div className="relative p-8">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg flex-shrink-0 bg-slate-800 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+              <div className="p-3 rounded-lg flex-shrink-0 bg-brand-surface text-brand-primary group-hover:text-brand-primary/80 transition-colors">
                 <FaGraduationCap className="text-2xl" />
               </div>
               <div className="flex-grow">
@@ -64,10 +64,10 @@ const Education = () => {
         </div>
 
         {/* Academic Foundation */}
-        <div className="group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 shadow-lg hover:shadow-xl hover:border-cyan-500/30 transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-xl border border-brand-border bg-brand-surface/50 shadow-lg hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300">
           <div className="relative p-8">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg flex-shrink-0 bg-slate-800 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+              <div className="p-3 rounded-lg flex-shrink-0 bg-brand-surface text-brand-primary group-hover:text-brand-primary/80 transition-colors">
                 <FaGraduationCap className="text-2xl" />
               </div>
               <div className="flex-grow">
