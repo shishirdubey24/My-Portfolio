@@ -23,50 +23,46 @@ const Projects = () => {
     };
   }, []);
 
-  const projects = [
+ const projects = [
     {
-      title: "Code Snippet Editor",
-      description: "A robust in-browser code editor built for developers. Features real-time syntax highlighting (Monaco), secure local storage, and instant sharing capabilities.",
-      tech: ['Next.js', 'React', 'Tailwind', 'Monaco Editor'],
+      title: "Repo-Decoder",
+      description: "A deterministic backend analysis engine utilizing AST-based static analysis to quantify architectural coherence and extract structural signals from repositories.",
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Docker', 'AST Analysis'],
+      live: "https://repo-decoder.netlify.app/",
+      code: "https://github.com/shishirdubey24/Git-Analyzer",
+      icon: <HiServer className="text-3xl" />,
+      color: "from-brand-primary to-brand-secondary",
+      features: [
+        'Architected a backend analysis engine using Express.js to perform shallow repository cloning into isolated, temporary workspaces with automated filesystem cleanup.',
+        'Engineered a deterministic AST-based static analysis pipeline to extract structural signals (JSX presence, hook usage) and classify file responsibilities.',
+        'Designed a deterministic structural scorecard system to quantify architectural coherence and entry-point hygiene across codebases.'
+      ]
+    },
+    {
+      title: "Code-Craft",
+      description: "A multi-language collaborative coding environment featuring real-time collaborative editing and a community-driven architecture for developers.",
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'Tailwind CSS'],
       live: "https://editor-snippet.vercel.app/",
       code: "https://github.com/shishirdubey24/Code-Editor.git",
       icon: <HiCode className="text-3xl" />,
-      color: "from-brand-primary to-brand-secondary",
+      color: "from-brand-secondary to-brand-tertiary",
       features: [
-        'VS Code-like editing experience',
-        'Local snippet persistence',
-        'Shareable dynamic links',
-        'Language-aware autosaving'
+        'Engineered a multi-language collaborative coding environment featuring a community-driven architecture for sharing and discovering code snippets.',
+        'Architected real-time collaborative editing leveraging WebSocket connections to ensure low-latency synchronization across distributed client sessions.'
       ]
     },
     {
-      title: "TrendWired E-Commerce",
-      description: "A full-feature shopping platform replicating modern e-commerce flows. Includes secure cart management, user authentication, and responsive product filtering.",
-      tech: ['React', 'Redux Toolkit', 'Appwrite', 'Bootstrap'],
+      title: "Trend-Wired",
+      description: "A comprehensive e-commerce platform equipped with a fully integrated admin control panel, robust RBAC, and real-time database synchronization.",
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'Tailwind CSS', 'Appwrite'],
       live: "https://trendwired.netlify.app/",
       code: "https://github.com/shishirdubey24/E-commerce-project.git",
       icon: <HiShoppingBag className="text-3xl" />,
-      color: "from-brand-secondary to-brand-tertiary",
-      features: [
-        'Secure Appwrite Authentication',
-        'Redux State Management',
-        'Persistent Cart System',
-        'Responsive Mobile Layout'
-      ]
-    },
-    {
-      title: "Shopify Headless Store",
-      description: "High-performance headless commerce solution using Shopify Storefront API. Decoupled frontend for maximum speed and customization.",
-      tech: ['Next.js', 'GraphQL', 'Shopify API', 'Tailwind'],
-      live: null,
-      code: "https://github.com/shishirdubey24/Shopify-Clone.git",
-      icon: <HiServer className="text-3xl" />,
       color: "from-brand-tertiary to-brand-primary",
       features: [
-        'GraphQL Data Layer',
-        'Stripe Payment Integration',
-        'Auth0 Identity Management',
-        'Real-time Order Tracking'
+        'Built a comprehensive e-commerce platform with a fully integrated admin control panel for inventory management, order tracking, and user administration.',
+        'Implemented robust role-based authentication (RBAC) and integrated third-party payment gateways for secure transactions.',
+        'Engineered real-time MongoDB synchronization to reflect live payment statuses and inventory changes instantly.'
       ]
     }
   ];
