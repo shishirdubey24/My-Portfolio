@@ -41,7 +41,7 @@ const Projects = () => {
     {
       title: "Code-Craft",
       description: "A multi-language collaborative coding environment featuring real-time collaborative editing and a community-driven architecture for developers.",
-      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'Tailwind CSS'],
+      tech: ['Next.js', 'TypeScript', 'MongoDB', 'Mongoose', 'Zustand', 'Tailwind CSS', 'JWT'],
       live: "https://editor-snippet.vercel.app/",
       code: "https://github.com/shishirdubey24/Code-Editor.git",
       icon: <HiCode className="text-3xl" />,
@@ -54,9 +54,9 @@ const Projects = () => {
     {
       title: "Trend-Wired",
       description: "A comprehensive e-commerce platform equipped with a fully integrated admin control panel, robust RBAC, and real-time database synchronization.",
-      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'Tailwind CSS', 'Appwrite'],
-      live: "https://trendwired.netlify.app/",
-      code: "https://github.com/shishirdubey24/E-commerce-project.git",
+      tech: ['Next.js', 'TypeScript', 'MongoDB', 'Mongoose', 'Zustand', 'Tailwind CSS', 'JWT'],
+      live: "https://next-js-project-five-ashen.vercel.app/",
+      code: "https://github.com/shishirdubey24/Next-JS-Project.git",
       icon: <HiShoppingBag className="text-3xl" />,
       color: "from-brand-tertiary to-brand-primary",
       features: [
